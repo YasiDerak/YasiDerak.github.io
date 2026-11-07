@@ -1,0 +1,186 @@
+@import '@fontsource-variable/newsreader/opsz.css';
+@import '@fontsource-variable/newsreader/opsz-italic.css';
+@import '@fontsource-variable/schibsted-grotesk/wght.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Design tokens
+   Warm paper neutrals + a quiet lavender/violet accent.
+------------------------------------------------------------------- */
+@theme {
+  --font-display: 'Newsreader Variable', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Schibsted Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --color-paper: #fbf9f6;
+  --color-paper-2: #f5f1eb;
+  --color-sand: #ece5db;
+  --color-line: #e7e0d6;
+  --color-line-strong: #d8cfc3;
+
+  --color-ink: #1f1b24;
+  --color-ink-2: #4a4452;
+  --color-ink-3: #77707f;
+
+  --color-lilac-50: #f6f3fb;
+  --color-lilac-100: #eee8f8;
+  --color-lilac-200: #ddd3f0;
+  --color-lilac-300: #c4b6e4;
+  --color-violet: #6a55a8;
+  --color-violet-deep: #47396f;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --shadow-soft: 0 1px 2px rgb(31 27 36 / 0.04), 0 8px 24px -8px rgb(31 27 36 / 0.08);
+  --shadow-lift: 0 2px 4px rgb(31 27 36 / 0.04), 0 24px 48px -16px rgb(71 57 111 / 0.18);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    background: var(--color-paper);
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5.5rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-lilac-200);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-violet);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 380;
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+  }
+
+  /* Underline that draws in on hover */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s var(--ease-out-soft);
+  }
+  .link-draw:hover,
+  .link-draw:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Paper grain — very faint, gives the off-white some tooth */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.1 0 0 0 0 0.14 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveal (driven by <Reveal>) — disabled for reduced motion
+------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.9s var(--ease-out-soft),
+    transform 0.9s var(--ease-out-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(106 85 168 / 0.35); }
+  50% { box-shadow: 0 0 0 6px rgb(106 85 168 / 0); }
+}
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(2%, -3%, 0) scale(1.04); }
+}
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+@keyframes bar {
+  0%, 100% { transform: scaleY(0.45); }
+  50% { transform: scaleY(1); }
+}
+
+.anim-pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
+.anim-drift { animation: drift 18s ease-in-out infinite; }
+.anim-orbit { animation: orbit 40s linear infinite; }
+.anim-bar { animation: bar 1.6s ease-in-out infinite; transform-origin: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .anim-pulse-dot,
+  .anim-drift,
+  .anim-orbit,
+  .anim-bar {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
