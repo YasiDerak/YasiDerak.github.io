@@ -39,7 +39,7 @@ src/
 public/
   media/aplomb-showcase.mp4   ← the Aplomb film
   og-image.png                ← social sharing preview (1200×630)
-  favicon.svg
+  favicon.png, apple-touch-icon.png   ← icons cut from the YD Design logo
 ```
 
 **You only need to edit `src/content/` and drop images into `src/assets/images/`.**

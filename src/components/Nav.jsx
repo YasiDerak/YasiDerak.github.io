@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { nav, profile } from '../content/site'
 import { useActiveSection, useScrolled } from '../lib/hooks'
+import logo from '../assets/brand/yd-logo.png'
 
 const ids = nav.map((n) => n.id).concat('contact')
 
@@ -39,11 +40,16 @@ export default function Nav() {
                 : 'border border-transparent py-2 pl-0 pr-0'
             }`}
           >
-            <a href="#top" className="group flex items-baseline gap-1.5" aria-label={`${profile.name} — back to top`}>
-              <span className="font-display text-[1.35rem] leading-none tracking-tight text-ink">Yasaman</span>
-              <span className="font-display text-[1.35rem] italic leading-none text-violet transition-transform duration-500 group-hover:translate-x-0.5">
-                D.
-              </span>
+            <a href="#top" className="group -my-1 flex shrink-0 items-center" aria-label={`${profile.name} — back to top`}>
+              <img
+                src={logo}
+                alt=""
+                width="478"
+                height="360"
+                className={`w-auto transition-all duration-500 ease-[var(--ease-out-soft)] group-hover:opacity-75 ${
+                  scrolled ? 'h-10' : 'h-12 md:h-14'
+                }`}
+              />
             </a>
 
             <ul className="hidden items-center gap-1 md:flex">
