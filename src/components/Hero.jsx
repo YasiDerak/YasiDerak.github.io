@@ -5,14 +5,14 @@ import { Arrow, ButtonLink } from './ui/Bits'
 
 function Portrait({ src }) {
   return (
-    <figure className="relative mx-auto w-full max-w-[24rem]">
+    <figure className="relative mx-auto w-full max-w-[19rem] md:max-w-[24rem]">
+      <span
+        aria-hidden="true"
+        className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-[2rem] border border-lilac-300"
+      />
       <div className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-lilac-50 shadow-[var(--shadow-lift)]">
         <img src={src} alt={`Portrait of ${profile.name}`} decoding="async" className="h-full w-full object-cover" />
       </div>
-      <figcaption className="absolute inset-x-4 bottom-4 flex items-center gap-2.5 rounded-full bg-paper/90 px-4 py-2.5 text-sm text-ink-2 backdrop-blur">
-        <span className="anim-pulse-dot h-2 w-2 shrink-0 rounded-full bg-violet" aria-hidden="true" />
-        {profile.role}, {profile.company}
-      </figcaption>
     </figure>
   )
 }

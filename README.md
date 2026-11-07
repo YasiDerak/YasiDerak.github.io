@@ -30,7 +30,7 @@ src/
     brand/           ← the YD Design logo (yd-logo.png, plus the original)
     aplomb/          ← Aplomb case-study images (brand board and crops)
     work/            ← project card previews
-    about/           ← your portrait (portrait.jpg)
+    about/           ← your photo (portrait.jpg, 4:5), shown in the hero
   components/
     Hero, Nav, Work, About, Experience, Expertise, Contact, Footer
     ProjectPage.jsx  ← project pages registry + "More work" strip
@@ -60,7 +60,6 @@ Still to add:
 
 | What | Where |
 |---|---|
-| Portrait | `src/assets/images/about/portrait.jpg` |
 | More projects (Aplomb and Immibright are in; one placeholder remains) | `site.js` → `projects` + images in `src/assets/images/work/` |
 | Aplomb timeline | `aplomb.js` → `meta` |
 | Aplomb typeface name(s) | `aplomb.js` → `system.typefaces` |

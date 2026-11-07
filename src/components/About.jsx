@@ -1,10 +1,7 @@
 import { about } from '../content/site'
-import { img } from '../lib/images'
 import Reveal from './ui/Reveal'
-import { Placeholder } from './ui/Media'
 
 export default function About() {
-  const portrait = img(about.portrait)
   return (
     <section id="about" aria-labelledby="about-title" className="py-20 md:py-28">
       <div className="container-page">
@@ -15,27 +12,8 @@ export default function About() {
               <span className="h-px w-8 bg-line-strong" aria-hidden="true" />
               About
             </p>
-            <div className="relative mt-8 max-w-[22rem]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-lilac-50">
-                {portrait ? (
-                  <img
-                    src={portrait}
-                    alt="Portrait of Yasaman Derakhshandeh"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover"
-                  />
-                ) : (
-                  <Placeholder label="Your portrait" path={about.portrait} />
-                )}
-              </div>
-              <span
-                aria-hidden="true"
-                className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-[1.75rem] border border-lilac-300"
-              />
-            </div>
             {about.facts?.length > 0 && (
-              <dl className="mt-12 max-w-[22rem] space-y-3">
+              <dl className="mt-8 max-w-[22rem] space-y-3">
                 {about.facts.map((f) => (
                   <div key={f.label} className="flex items-baseline justify-between gap-4 border-b border-line pb-3 text-sm">
                     <dt className="text-ink-3">{f.label}</dt>

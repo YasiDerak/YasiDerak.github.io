@@ -42,8 +42,8 @@ export const hero = {
     { label: 'Focus', value: 'Product design · UX/UI · Brand' },
     { label: 'Based in', value: 'Vancouver, Canada' },
   ],
-  // Your photo (shared with the About section). Until it exists, the hero
-  // shows a small stack of your project covers instead.
+  // Your photo, shown on the right of the first screen. Remove the file (or
+  // this line) and the hero shows a small stack of project covers instead.
   portrait: 'about/portrait.jpg',
 }
 
@@ -69,14 +69,12 @@ export const about = {
       text: 'The best details come from working side by side with engineering, not handing off.',
     },
   ],
-  // Small facts shown under the portrait.
+  // Small facts shown in the About section.
   facts: [
     { label: 'Based in', value: 'Vancouver, Canada' },
     { label: 'Background', value: 'Architecture, fine art, marketing' },
     { label: 'Languages', value: 'English & Persian' },
   ],
-  // Optional portrait: drop a file at src/assets/images/about/portrait.jpg
-  portrait: 'about/portrait.jpg',
 }
 
 /* ------------------------------------------------------------------
