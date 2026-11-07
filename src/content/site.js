@@ -114,21 +114,6 @@ export const experience = [
     summary:
       'Designed the responsive website in Figma and built and launched it in Odoo, in English and Persian — including the logos, icons and banners, a clearer navigation, and a smoother assessment form and booking flow.',
   },
-  {
-    role: 'Digital Marketing Specialist & Instructor',
-    company: 'Khorshid Fanavaran Iman',
-    period: 'Jan 2019 — Sep 2023',
-    place: 'Tehran',
-    summary:
-      'Created campaign visuals and video, ran Google Ads and social campaigns, and led and trained a team of marketing specialists.',
-  },
-  {
-    role: 'Founder',
-    company: 'Mahpishoni Art Gallery',
-    period: 'Mar 2017 — Jun 2019',
-    place: 'Shiraz',
-    summary: 'Founded and ran a gallery for my own handmade paintings and sculpture.',
-  },
 ]
 
 export const education = [
