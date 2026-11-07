@@ -32,10 +32,19 @@ export const nav = [
 ]
 
 export const hero = {
-  // Keep the headline short — it's set very large.
+  title: 'Product & UI/UX Designer',
+  // Keep the headline short — it's the largest line on the page.
   headline: ['Products that make sense', 'and feel good to use.'],
   intro:
     'I’m a product designer in Vancouver, leading product, design and brand at FaydenAI. I work across the whole arc of a product — the question it answers, the journey through it, and the interface people actually touch.',
+  facts: [
+    { label: 'Now', value: 'Product & Design Lead, FaydenAI' },
+    { label: 'Focus', value: 'Product design · UX/UI · Brand' },
+    { label: 'Based in', value: 'Vancouver, Canada' },
+  ],
+  // Your photo (shared with the About section). Until it exists, the hero
+  // shows a small stack of your project covers instead.
+  portrait: 'about/portrait.jpg',
 }
 
 export const about = {
