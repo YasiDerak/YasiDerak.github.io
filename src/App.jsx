@@ -1,24 +1,55 @@
+import { useLayoutEffect, useRef } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import CaseStudy from './components/aplomb/CaseStudy'
+import Work from './components/Work'
 import About from './components/About'
 import Experience from './components/Experience'
-import Work from './components/Work'
 import Expertise from './components/Expertise'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ProjectPage, { projectTitle } from './components/ProjectPage'
+import { profile } from './content/site'
+import { useRoute } from './lib/router'
+
+const baseTitle = document.title
 
 export default function App() {
+  const route = useRoute()
+  const prev = useRef(null)
+
+  // When the page itself changes, jump to the right place on the new page.
+  useLayoutEffect(() => {
+    const key = route.page === 'project' ? `project:${route.slug}` : 'home'
+    const changed = prev.current !== null && prev.current !== key
+    prev.current = key
+
+    if (route.page === 'project') {
+      document.title = `${projectTitle(route.slug)} — ${profile.name}`
+      window.scrollTo({ top: 0, behavior: 'instant' })
+      return
+    }
+    document.title = baseTitle
+    if (!changed) return
+    const target = route.anchor && document.getElementById(route.anchor)
+    if (target) target.scrollIntoView({ behavior: 'instant' })
+    else window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [route])
+
   return (
     <>
-      <Nav />
+      <Nav home={route.page === 'home'} />
       <main id="main">
-        <Hero />
-        <CaseStudy />
-        <About />
-        <Experience />
-        <Work />
-        <Expertise />
+        {route.page === 'project' ? (
+          <ProjectPage slug={route.slug} />
+        ) : (
+          <>
+            <Hero />
+            <Work />
+            <About />
+            <Experience />
+            <Expertise />
+          </>
+        )}
         <Contact />
       </main>
       <Footer />

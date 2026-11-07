@@ -6,7 +6,7 @@ import { Placeholder } from './ui/Media'
 export default function About() {
   const portrait = img(about.portrait)
   return (
-    <section id="about" aria-labelledby="about-title" className="py-28 md:py-40">
+    <section id="about" aria-labelledby="about-title" className="py-20 md:py-28">
       <div className="container-page">
         <div className="grid gap-14 md:grid-cols-12 md:gap-10">
           <Reveal className="md:col-span-4">

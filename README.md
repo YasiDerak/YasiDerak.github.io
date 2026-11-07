@@ -1,6 +1,6 @@
 # Yasaman Derakhshandeh — Portfolio
 
-A one-page portfolio for Yasaman (Yasi) Derakhshandeh, a product designer and Product & Design Lead at FaydenAI, with a full case study of **Aplomb**.
+A portfolio for Yasaman (Yasi) Derakhshandeh, a product designer and Product & Design Lead at FaydenAI. The home page lists her projects; projects with their own case study (starting with **Aplomb**) open on a page of their own.
 
 Built with **React 19 + Vite + Tailwind CSS v4**. There's no backend and no animation library. Motion uses CSS plus a small `IntersectionObserver` hook, and it all deploys free to **GitHub Pages**.
 
@@ -24,17 +24,19 @@ Requires Node 20+.
 ```
 src/
   content/
-    site.js          ← profile, links, hero, about, experience, other work, expertise
+    site.js          ← profile, links, hero, about, experience, projects, expertise
     aplomb.js        ← the Aplomb case study (copy, film chapters, palette, images)
   assets/images/
-    aplomb/          ← case-study images (stills from the film + brand board crops)
-    work/            ← previews for "Other selected work"
+    brand/           ← the YD Design logo (yd-logo.png, plus the original)
+    aplomb/          ← Aplomb case-study images (brand board and crops)
+    work/            ← project card previews
     about/           ← your portrait (portrait.jpg)
   components/
-    Hero, Nav, About, Experience, Work, Expertise, Contact, Footer
-    aplomb/          ← CaseStudy, Film (video player), Chapters (01–08)
+    Hero, Nav, Work, About, Experience, Expertise, Contact, Footer
+    ProjectPage.jsx  ← project pages registry + "More work" strip
+    aplomb/          ← the Aplomb page: CaseStudy, Film (video player), Chapters (01–05)
     ui/              ← Reveal (scroll-in), Media (image + placeholder), shared bits
-  lib/               ← image lookup + small hooks
+  lib/               ← image lookup, small hooks, and the hash router
   styles.css         ← design tokens (colours, fonts, shadows) and global styles
 public/
   media/aplomb-showcase.mp4   ← the Aplomb film
@@ -59,10 +61,9 @@ Still to add:
 | What | Where |
 |---|---|
 | Portrait | `src/assets/images/about/portrait.jpg` |
-| More projects (Immibright is in; one placeholder remains) | `site.js` → `projects` + images in `src/assets/images/work/` |
+| More projects (Aplomb and Immibright are in; one placeholder remains) | `site.js` → `projects` + images in `src/assets/images/work/` |
 | Aplomb timeline | `aplomb.js` → `meta` |
 | Aplomb typeface name(s) | `aplomb.js` → `system.typefaces` |
-| Aplomb process artefacts (research, wireframes, iterations) | `aplomb.js` → `journey.artefacts` + images |
 
 ### Adding images
 
@@ -87,6 +88,16 @@ Images are discovered at build time. If a file is missing, the page shows a desi
 ```
 
 Delete the `placeholder: true` line once it's real.
+
+### Giving a project its own page
+
+Project pages live at `#/work/<slug>` (a hash URL, so they work on GitHub Pages and from a saved file).
+
+1. Add `slug: 'my-project'` to the project in `site.js → projects`. The card then opens the page instead of an external link.
+2. Build the page, e.g. `src/components/my-project/Page.jsx` (copy `aplomb/CaseStudy.jsx` as a starting point).
+3. Register it in `src/components/ProjectPage.jsx` → `pages`.
+
+Keep case studies short: lead with the strongest visual (a film or a hero image), then only the sections that add something it can't show.
 
 ### The Aplomb film
 

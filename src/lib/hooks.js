@@ -42,9 +42,11 @@ export function useInView({ rootMargin = '0px 0px -10% 0px', once = true } = {})
 }
 
 /** Returns the id of the section currently in the reading zone. */
-export function useActiveSection(ids) {
+export function useActiveSection(ids, enabled = true) {
   const [active, setActive] = useState(null)
   useEffect(() => {
+    setActive(null)
+    if (!enabled) return
     const els = ids.map((id) => document.getElementById(id)).filter(Boolean)
     if (!els.length) return
     const io = new IntersectionObserver(
@@ -57,7 +59,7 @@ export function useActiveSection(ids) {
     )
     els.forEach((el) => io.observe(el))
     return () => io.disconnect()
-  }, [ids])
+  }, [ids, enabled])
   return active
 }
 

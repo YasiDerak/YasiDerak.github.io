@@ -40,7 +40,7 @@ export const aplomb = {
     ],
   },
 
-  /* ---------- 01 Overview ---------- */
+  /* ---------- Overview ---------- */
   overview: {
     lead: 'Aplomb is a speaking coach for people who live and work in a language they didn’t grow up speaking.',
     problem:
@@ -50,26 +50,7 @@ export const aplomb = {
     moments: ['Job interview', 'Salary review', 'Presentation', 'Doctor’s visit', 'Pitch'],
   },
 
-  /* ---------- 02 Vision ---------- */
-  vision: {
-    statement: 'Prepare for the moment, not the course.',
-    pillars: [
-      {
-        title: 'Your moment, not a course',
-        text: 'Every lesson starts from something real you have coming up, in your own words.',
-      },
-      {
-        title: 'Out loud, always',
-        text: 'Reading a script isn’t practice. Saying it is — so every lesson has you speaking.',
-      },
-      {
-        title: 'Your words stay yours',
-        text: 'Moments, recordings and saved words belong to the user, and can be deleted at any time.',
-      },
-    ],
-  },
-
-  /* ---------- 03 My contributions ---------- */
+  /* ---------- My role ---------- */
   contributions: [
     {
       title: 'Brand identity',
@@ -97,67 +78,27 @@ export const aplomb = {
     },
   ],
 
-  /* ---------- 04 Process / user journey ---------- */
-  journey: {
-    intro:
-      'The core experience is designed as one continuous journey: from “I have something coming up” to “I’ve said it out loud, and I’m ready.”',
-    steps: [
-      { n: '01', title: 'Your coach’s home', text: 'One clear next step, and what else is worth doing today.' },
-      { n: '02', title: 'Ask for what you need', text: 'A moment to get ready for, a sentence to say now, or a word you just met.' },
-      { n: '03', title: 'Say it out loud', text: 'The coach says each line and you say it back. Then the script fades until it’s only you.' },
-      { n: '04', title: 'Take the hard question', text: 'The coach plays the other side — the CFO, the interviewer — and you answer in your own words.' },
-      { n: '05', title: 'Watch yourself back', text: 'Film a take and see what the coach heard: pace, fillers, what you covered and what you missed.' },
-      { n: '06', title: 'See what you’ve built', text: 'Minutes spoken, words kept and mistakes fixed — progress you can feel.' },
-    ],
-    decisions: [
-      {
-        title: 'Support that fades',
-        text: 'Practice moves from full script, to key points, to on your own — so help steps back as confidence grows.',
-      },
-      {
-        title: 'Your first language, alongside',
-        text: 'Explanations can appear in the user’s own language, so nothing gets lost while learning to say it.',
-      },
-      {
-        title: 'Controls for real rehearsal',
-        text: 'Repeat, slow down to 0.75×, ask for another version, or switch tone — more polite, more casual, shorter.',
-      },
-      {
-        title: 'Privacy by default',
-        text: 'Video takes stay on the phone. A small promise that makes it easier to practise honestly.',
-      },
-    ],
-    // TODO: add your process artefacts (research notes, sketches, wireframes, iterations).
-    // Drop images in src/assets/images/aplomb/ and set the file names here.
-    artefacts: [
-      { image: 'aplomb/process-research.jpg', caption: 'Research & early notes', placeholder: true },
-      { image: 'aplomb/process-wireframes.jpg', caption: 'Wireframes', placeholder: true },
-      { image: 'aplomb/process-iterations.jpg', caption: 'Visual iterations', placeholder: true },
-    ],
-  },
+  /* ---------- Key decisions ---------- */
+  decisions: [
+    {
+      title: 'Support that fades',
+      text: 'Practice moves from full script, to key points, to on your own — so help steps back as confidence grows.',
+    },
+    {
+      title: 'Your first language, alongside',
+      text: 'Explanations can appear in the user’s own language, so nothing gets lost while learning to say it.',
+    },
+    {
+      title: 'Controls for real rehearsal',
+      text: 'Repeat, slow down to 0.75×, ask for another version, or switch tone — more polite, more casual, shorter.',
+    },
+    {
+      title: 'Privacy by default',
+      text: 'Video takes stay on the phone. A small promise that makes it easier to practise honestly.',
+    },
+  ],
 
-  /* ---------- 05 Product interface ---------- */
-  interface: {
-    intro:
-      'A calm, bright interface built around one object: the coach. Everything else — the line to say, the controls, the feedback — sits quietly around it.',
-    feature: [
-      { image: 'aplomb/app-answer.jpg', title: 'The coach sorts it', text: 'Words to say, a simpler version, and why they work. Then you say it out loud.' },
-      { image: 'aplomb/app-practise.jpg', title: 'Less help each time', text: 'Scripts fade line by line until the words are yours.' },
-    ],
-    screens: [
-      { image: 'aplomb/screen-home.jpg', caption: 'Coach home' },
-      { image: 'aplomb/screen-say-this.jpg', caption: 'Say this' },
-      { image: 'aplomb/screen-progress.jpg', caption: 'Progress' },
-      { image: 'aplomb/screen-word.jpg', caption: 'Saved word' },
-    ],
-    more: [
-      { image: 'aplomb/app-ask.jpg', title: 'Ask for what you need' },
-      { image: 'aplomb/app-progress.jpg', title: 'Watch it add up' },
-      { image: 'aplomb/app-vocabulary.jpg', title: 'Vocabulary bank' },
-    ],
-  },
-
-  /* ---------- 06 Design system ---------- */
+  /* ---------- Design system ---------- */
   system: {
     intro:
       'One small set of decisions, used everywhere: a confident navy mark, a soft periwinkle field, and violet for anything you can act on.',
@@ -181,19 +122,7 @@ export const aplomb = {
     ],
   },
 
-  /* ---------- 07 Website ---------- */
-  website: {
-    intro:
-      'The landing page tells the product’s story by showing it working — the page itself rehearses real lines from real moments.',
-    hero: { image: 'aplomb/landing-hero.jpg', title: 'The mark speaks real lines from real moments.' },
-    beats: [
-      { image: 'aplomb/landing-how-it-works.jpg', title: 'Scroll, and the coach’s story plays out.', text: 'How it works becomes a single horizontal journey through the six steps.' },
-      { image: 'aplomb/landing-tools.jpg', title: 'Tiles that play on their own.', text: 'Audio Companion, Songs, Articulation Gym and Vocal Gym each demo themselves.' },
-      { image: 'aplomb/landing-responsive.jpg', title: 'One page, from desktop to phone.', text: 'The same story, recomposed for a small screen.' },
-    ],
-  },
-
-  /* ---------- 08 Final ---------- */
+  /* ---------- Final ---------- */
   final: {
     image: 'aplomb/brand-board.jpg',
     closing: 'A brand, an app and a website that all say the same thing: you can do this.',

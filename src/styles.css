@@ -161,6 +161,45 @@
   50% { transform: scaleY(1); }
 }
 
+/* Hero logo scene */
+@keyframes blob-morph {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%; transform: rotate(0deg) scale(1); }
+  33% { border-radius: 61% 39% 45% 55% / 57% 62% 38% 43%; transform: rotate(35deg) scale(1.06); }
+  66% { border-radius: 38% 62% 52% 48% / 40% 55% 45% 60%; transform: rotate(-20deg) scale(0.97); }
+}
+@keyframes logo-in {
+  0% { clip-path: inset(0 100% 0 0); filter: blur(10px); opacity: 0; }
+  35% { opacity: 1; }
+  100% { clip-path: inset(0 0 0 0); filter: blur(0); opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -9px, 0); }
+}
+@keyframes sheen {
+  0% { background-position: 130% 0; }
+  45%, 100% { background-position: -30% 0; }
+}
+@keyframes pop-in {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+@keyframes ping {
+  0% { transform: scale(1); opacity: 0.55; }
+  75%, 100% { transform: scale(3.4); opacity: 0; }
+}
+@keyframes twinkle {
+  0%, 100% { transform: scale(0.2) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1) rotate(45deg); opacity: 1; }
+}
+.anim-blob { animation: blob-morph 16s ease-in-out infinite; }
+.anim-logo-in { animation: logo-in 1.8s var(--ease-out-soft) 0.15s both; }
+.anim-float { animation: float 7s ease-in-out 2s infinite; }
+.anim-sheen { animation: sheen 7s ease-in-out 2.2s infinite; background-position: 130% 0; }
+.anim-pop-in { animation: pop-in 0.6s var(--ease-out-soft) 1.4s both; }
+.anim-ping { animation: ping 2.6s ease-out 2s infinite; }
+.anim-twinkle { animation: twinkle 3.6s ease-in-out infinite; }
+
 .anim-pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
 .anim-drift { animation: drift 18s ease-in-out infinite; }
 .anim-orbit { animation: orbit 40s linear infinite; }
@@ -175,8 +214,20 @@
   .anim-pulse-dot,
   .anim-drift,
   .anim-orbit,
-  .anim-bar {
+  .anim-bar,
+  .anim-blob,
+  .anim-logo-in,
+  .anim-float,
+  .anim-sheen,
+  .anim-pop-in,
+  .anim-ping,
+  .anim-twinkle {
     animation: none;
+  }
+  .anim-twinkle,
+  .anim-ping,
+  .anim-sheen {
+    opacity: 0;
   }
   *,
   *::before,

@@ -51,7 +51,7 @@ const socials = [
 export default function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-title" className="grain relative overflow-hidden px-2 pb-2 md:px-4 md:pb-4">
-      <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-lilac-100 via-lilac-50 to-paper-2 py-24 md:rounded-[2.75rem] md:py-36">
+      <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-lilac-100 via-lilac-50 to-paper-2 py-20 md:rounded-[2.75rem] md:py-28">
         <div
           aria-hidden="true"
           className="anim-drift pointer-events-none absolute -bottom-40 -right-20 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,var(--color-lilac-200),transparent_70%)]"
@@ -59,7 +59,7 @@ export default function Contact() {
         <div className="container-page relative">
           <Reveal>
             <p className="eyebrow flex items-center gap-3">
-              <span className="text-violet">06</span>
+              <span className="text-violet">05</span>
               <span className="h-px w-8 bg-line-strong" aria-hidden="true" />
               Contact
             </p>
@@ -68,7 +68,7 @@ export default function Contact() {
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid gap-12 md:mt-20 md:grid-cols-12 md:gap-10">
+          <div className="mt-12 grid gap-12 md:mt-14 md:grid-cols-12 md:gap-10">
             <Reveal className="md:col-span-6">
               <p className="max-w-md text-lg leading-relaxed text-ink-2">
                 I’m open to conversations about product design roles, freelance projects and collaborations — especially

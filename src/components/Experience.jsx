@@ -5,7 +5,7 @@ import { Arrow, PlaceholderTag, SectionHeader } from './ui/Bits'
 export default function Experience() {
   const [current, ...previous] = experience
   return (
-    <section id="experience" aria-labelledby="experience-title" className="border-t border-line bg-paper-2/60 py-28 md:py-40">
+    <section id="experience" aria-labelledby="experience-title" className="border-t border-line bg-paper-2/60 py-20 md:py-28">
       <div className="container-page">
         <Reveal>
           <SectionHeader
@@ -20,7 +20,7 @@ export default function Experience() {
         </Reveal>
 
         {/* Current role — featured */}
-        <Reveal className="mt-16 md:mt-24">
+        <Reveal className="mt-12 md:mt-16">
           <article className="relative overflow-hidden rounded-[2rem] border border-line bg-paper p-7 shadow-[var(--shadow-soft)] md:p-12">
             <div
               aria-hidden="true"
@@ -48,7 +48,7 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
-                <a href="#work" className="link-draw mt-8 inline-flex items-center gap-2 text-sm text-violet-deep">
+                <a href="#/work/aplomb" className="link-draw mt-8 inline-flex items-center gap-2 text-sm text-violet-deep">
                   See the Aplomb case study <Arrow direction="right" />
                 </a>
               </div>
@@ -57,7 +57,7 @@ export default function Experience() {
         </Reveal>
 
         {/* Timeline */}
-        <div className="mt-20 grid gap-12 md:grid-cols-12 md:gap-10">
+        <div className="mt-14 grid gap-12 md:grid-cols-12 md:gap-10">
           <Reveal className="md:col-span-4">
             <h3 className="eyebrow">Previously</h3>
             <p className="mt-4 max-w-xs text-ink-3">

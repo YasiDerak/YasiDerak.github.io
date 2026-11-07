@@ -5,9 +5,11 @@ import logo from '../assets/brand/yd-logo.png'
 
 const ids = nav.map((n) => n.id).concat('contact')
 
-export default function Nav() {
+export default function Nav({ home = true }) {
   const scrolled = useScrolled()
-  const active = useActiveSection(ids)
+  const section = useActiveSection(ids, home)
+  // On a project page, "Work" is where you are.
+  const active = home ? section : 'work'
   const [open, setOpen] = useState(false)
 
   useEffect(() => {

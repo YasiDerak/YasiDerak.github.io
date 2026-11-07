@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { hero, profile } from '../content/site'
 import { usePrefersReducedMotion } from '../lib/hooks'
 import { Arrow, ButtonLink } from './ui/Bits'
+import logo from '../assets/brand/yd-logo.png'
 
 /**
  * The name responds to the cursor: letters near the pointer gain weight,
@@ -85,27 +86,108 @@ function ResponsiveName({ lines }) {
   )
 }
 
-function Orbit() {
+// Position of the logo's own dot ("DESIGN ●"), as a share of the trimmed logo image.
+const LOGO_DOT = { left: '63.5%', top: '73.7%', size: '2.9%' }
+const SPARKLES = [
+  { left: '4%', top: '18%', size: 12, delay: '0.4s' },
+  { left: '92%', top: '6%', size: 9, delay: '1.6s' },
+  { left: '98%', top: '82%', size: 14, delay: '2.6s' },
+  { left: '26%', top: '96%', size: 8, delay: '3.2s' },
+]
+
+function Sparkle({ s }) {
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute -right-[18vw] -top-[8vw] h-[70vw] w-[70vw] max-h-[900px] max-w-[900px] md:-right-[6vw] md:top-[-4vw] md:h-[52vw] md:w-[52vw]">
-      <div className="anim-drift absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_40%_40%,var(--color-lilac-200),transparent_65%)] opacity-80 blur-2xl" />
-      <svg viewBox="0 0 400 400" className="absolute inset-0 h-full w-full">
-        {[190, 150, 112, 76].map((r, i) => (
-          <circle
-            key={r}
-            cx="200"
-            cy="200"
-            r={r}
-            fill="none"
-            stroke="var(--color-lilac-300)"
-            strokeOpacity={0.55 - i * 0.08}
-            strokeWidth="0.6"
-            strokeDasharray={i === 1 ? '1 5' : undefined}
+    <svg
+      viewBox="0 0 24 24"
+      className="anim-twinkle absolute text-violet"
+      style={{ left: s.left, top: s.top, width: s.size, height: s.size, animationDelay: s.delay }}
+    >
+      <path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z" fill="currentColor" />
+    </svg>
+  )
+}
+
+/**
+ * The YD Design mark, brought to life: it writes itself in from left to right,
+ * then floats on a slowly morphing lavender glow. A violet sheen sweeps through
+ * the letterforms, the logo's dot pulses, and the whole scene leans gently
+ * towards the cursor. Everything is static for reduced-motion visitors.
+ */
+function LogoScene({ className = '' }) {
+  const ref = useRef(null)
+  const reduced = usePrefersReducedMotion()
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el || reduced || !window.matchMedia('(pointer: fine)').matches) return
+    const section = el.closest('section')
+    let frame = 0
+    let next = { x: 0, y: 0 }
+    const apply = () => {
+      frame = 0
+      el.style.setProperty('--mx', next.x.toFixed(3))
+      el.style.setProperty('--my', next.y.toFixed(3))
+    }
+    const onMove = (e) => {
+      next = { x: (e.clientX / window.innerWidth) * 2 - 1, y: (e.clientY / window.innerHeight) * 2 - 1 }
+      if (!frame) frame = requestAnimationFrame(apply)
+    }
+    const onLeave = () => {
+      next = { x: 0, y: 0 }
+      if (!frame) frame = requestAnimationFrame(apply)
+    }
+    section.addEventListener('pointermove', onMove)
+    section.addEventListener('pointerleave', onLeave)
+    return () => {
+      cancelAnimationFrame(frame)
+      section.removeEventListener('pointermove', onMove)
+      section.removeEventListener('pointerleave', onLeave)
+    }
+  }, [reduced])
+
+  const mask = {
+    WebkitMaskImage: `url(${logo})`,
+    maskImage: `url(${logo})`,
+    WebkitMaskSize: '100% 100%',
+    maskSize: '100% 100%',
+  }
+
+  return (
+    <div ref={ref} aria-hidden="true" className={`pointer-events-none select-none ${className}`} style={{ '--mx': 0, '--my': 0 }}>
+      {/* Morphing glow, drifting against the cursor */}
+      <div
+        className="absolute -inset-[30%] -z-10 transition-transform duration-[1200ms] ease-out"
+        style={{ transform: 'translate3d(calc(var(--mx) * -22px), calc(var(--my) * -18px), 0)' }}
+      >
+        <div className="anim-blob absolute inset-[14%] bg-[radial-gradient(circle_at_35%_35%,var(--color-lilac-200),var(--color-lilac-100)_45%,transparent_72%)] opacity-90 blur-2xl" />
+        <div
+          className="anim-blob absolute inset-[30%_6%_10%_34%] bg-[radial-gradient(circle,rgb(255_128_126/0.16),transparent_70%)] blur-2xl"
+          style={{ animationDuration: '21s', animationDirection: 'reverse' }}
+        />
+      </div>
+
+      {/* The logo, leaning towards the cursor */}
+      <div
+        className="relative transition-transform duration-700 ease-out"
+        style={{ transform: 'translate3d(calc(var(--mx) * 10px), calc(var(--my) * 8px), 0)' }}
+      >
+        <div className="anim-float relative">
+          <img src={logo} alt="" width="478" height="360" className="anim-logo-in block h-auto w-full" />
+          <div
+            className="anim-sheen absolute inset-0 bg-[linear-gradient(105deg,transparent_38%,var(--color-violet)_47%,#a594e6_51%,transparent_60%)] bg-[length:260%_100%] bg-no-repeat"
+            style={mask}
           />
+          <span
+            className="absolute -translate-x-1/2 -translate-y-1/2"
+            style={{ left: LOGO_DOT.left, top: LOGO_DOT.top, width: LOGO_DOT.size, aspectRatio: '1' }}
+          >
+            <span className="anim-ping absolute inset-0 rounded-full bg-violet" />
+            <span className="anim-pop-in absolute -inset-[12%] rounded-full bg-violet" />
+          </span>
+        </div>
+        {SPARKLES.map((s) => (
+          <Sparkle key={s.left} s={s} />
         ))}
-      </svg>
-      <div className="anim-orbit absolute inset-[12.5%]">
-        <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet shadow-[0_0_0_6px_rgb(106_85_168/0.12)]" />
       </div>
     </div>
   )
@@ -114,7 +196,11 @@ function Orbit() {
 export default function Hero() {
   return (
     <section id="top" className="grain relative isolate overflow-hidden pb-16 pt-32 md:pb-24 md:pt-44">
-      <Orbit />
+      {/* Small screens: just the soft glow; the logo already sits in the nav */}
+      <div
+        aria-hidden="true"
+        className="anim-blob pointer-events-none absolute -right-24 -top-16 -z-10 h-80 w-80 bg-[radial-gradient(circle_at_40%_40%,var(--color-lilac-200),transparent_68%)] opacity-80 blur-2xl md:hidden"
+      />
 
       <div className="container-page relative">
         <div className="mb-10 flex flex-wrap items-center gap-x-6 gap-y-3 md:mb-14">
@@ -131,9 +217,11 @@ export default function Hero() {
         </div>
 
         <div className="relative">
+          <LogoScene className="absolute bottom-[63%] right-0 hidden w-[clamp(13rem,24vw,21rem)] md:block" />
+
           <ResponsiveName lines={['Yasaman', 'Derakhshandeh']} />
 
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[0.78rem] uppercase tracking-[0.14em] text-ink-3 md:absolute md:right-0 md:top-3 md:mt-0 md:block md:space-y-2 md:text-right">
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[0.78rem] uppercase tracking-[0.14em] text-ink-3 md:justify-end md:gap-x-8">
             {profile.titles.map((t) => (
               <li key={t}>{t}</li>
             ))}

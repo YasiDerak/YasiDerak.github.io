@@ -25,10 +25,9 @@ export const links = {
 }
 
 export const nav = [
-  { id: 'work', label: 'Aplomb' },
+  { id: 'work', label: 'Work' },
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
-  { id: 'selected', label: 'Work' },
   { id: 'expertise', label: 'Expertise' },
 ]
 
@@ -139,11 +138,25 @@ export const education = [
 ]
 
 /* ------------------------------------------------------------------
-   OTHER SELECTED WORK
+   SELECTED WORK
+   Every project is a card on the home page.
+   slug:  give a project its own page at #/work/<slug> (register the page
+          in src/components/ProjectPage.jsx). Without a slug, the card
+          links out to `link` instead (or nowhere, if link is null).
    image: path inside src/assets/images/ (e.g. 'work/project-one.jpg')
-   link:  case study or live URL (null hides the link)
+   video: optional, from /public — plays on hover over the card
 ------------------------------------------------------------------- */
 export const projects = [
+  {
+    slug: 'aplomb',
+    title: 'Aplomb',
+    description:
+      'A speaking coach for people who live and work in a language they didn’t grow up speaking. Brand, iOS & Android app and landing page for FaydenAI.',
+    role: 'Product & Design Lead',
+    tags: ['Brand', 'Mobile app', 'Website'],
+    image: 'aplomb/brand-board.jpg',
+    video: 'media/aplomb-showcase.mp4',
+  },
   {
     title: 'Immibright',
     description:

@@ -4,11 +4,11 @@ import { SectionHeader } from './ui/Bits'
 
 export default function Expertise() {
   return (
-    <section id="expertise" aria-labelledby="expertise-title" className="border-t border-line bg-paper-2/60 py-28 md:py-40">
+    <section id="expertise" aria-labelledby="expertise-title" className="py-20 md:py-28">
       <div className="container-page">
         <Reveal>
           <SectionHeader
-            index="05"
+            index="04"
             label="Skills & expertise"
             title={
               <span id="expertise-title">
@@ -18,7 +18,7 @@ export default function Expertise() {
           />
         </Reveal>
 
-        <div className="mt-16 grid gap-14 md:mt-24 lg:grid-cols-3 lg:gap-10">
+        <div className="mt-12 grid gap-12 md:mt-16 lg:grid-cols-3 lg:gap-10">
           {expertise.map((g, gi) => (
             <Reveal key={g.group} delay={gi * 100}>
               <h3 className="flex items-baseline gap-3 border-b border-ink/80 pb-4">
