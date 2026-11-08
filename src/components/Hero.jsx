@@ -1,20 +1,24 @@
 import { hero, profile } from '../content/site'
 import { img } from '../lib/images'
 
-/** The photo in a soft arch, white-framed, with a blush circle blooming behind it. */
+const ARCH = '50% 50% 1.25rem 1.25rem / 40% 40% 1.25rem 1.25rem'
+
+/**
+ * The photo in a soft arch. Its violet frame slowly shimmers through
+ * violet shades, and a small badge says hello with a waving hand.
+ */
 function ArchPortrait({ src }) {
   return (
     <figure className="relative mx-auto w-full max-w-[18rem] sm:max-w-[21rem]">
-      <span
-        aria-hidden="true"
-        className="hero-bloom absolute -bottom-6 -right-8 aspect-square w-[62%] rounded-full bg-pink"
-      />
-      <div
-        className="relative aspect-[4/5] overflow-hidden border-[6px] border-violet bg-lilac-200 shadow-[var(--shadow-lift)]"
-        style={{ borderRadius: '50% 50% 1.25rem 1.25rem / 40% 40% 1.25rem 1.25rem' }}
-      >
-        {src && <img src={src} alt={`Portrait of ${profile.name}`} decoding="async" className="h-full w-full object-cover" />}
+      <div className="arch-frame p-[6px] shadow-[var(--shadow-lift)]" style={{ borderRadius: ARCH }}>
+        <div className="aspect-[4/5] overflow-hidden bg-lilac-200" style={{ borderRadius: ARCH }}>
+          {src && <img src={src} alt={`Portrait of ${profile.name}`} decoding="async" className="h-full w-full object-cover" />}
+        </div>
       </div>
+      <figcaption className="hero-in absolute -bottom-5 -left-4 flex items-center gap-2 rounded-full bg-white px-5 py-3 font-medium text-ink shadow-[var(--shadow-soft)] sm:-left-8" style={{ '--d': '700ms' }}>
+        <span className="wave inline-block text-[1.25rem] leading-none" aria-hidden="true">👋</span>
+        Hi, I’m Yasi
+      </figcaption>
     </figure>
   )
 }

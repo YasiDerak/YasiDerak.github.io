@@ -115,11 +115,11 @@ Colours, fonts and shadows are defined once in `src/styles.css` under `@theme` a
 - **Light violet** `#F5F1FE`: the first screen; `#FAF8FF` for quieter sections
 - **Violet** `#A58CF0`: buttons and the contact band, always with dark text on it
 - **Deep violet** `#6B4FCF`: links and small accents on white
-- **Pink** `#F7C6DA`: a touch only, behind the photo and on the email button
+- **Pink** `#F7C6DA`: a small touch only (menu underline, Faydesk card)
 - **Ink** `#2F2352` for text
 - **Display:** Cormorant Garamond (self-hosted). **Text:** Jost (self-hosted)
 
-The hero's one animation: the words settle in and the pink circle behind the photo blooms into place. Visitors who prefer reduced motion see it still.
+Hero motion: the words settle in, the photo's violet frame slowly shimmers through violet shades, and the hand on the "Hi, I'm Yasi" badge waves. Visitors who prefer reduced motion see it all still.
 
 Projects marked `placeholder: true` stay hidden on the live page until you fill them in.
 
