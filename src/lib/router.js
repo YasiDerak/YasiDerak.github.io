@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react'
  * Any other hash (#main, in-page anchors on a project page) leaves the
  * current page as it is.
  */
-export const HOME_SECTIONS = ['top', 'work', 'about', 'experience', 'expertise', 'contact']
+export const HOME_SECTIONS = ['top', 'work', 'about', 'experience', 'skills', 'contact']
 
 export const projectHref = (slug) => `#/work/${slug}`
 

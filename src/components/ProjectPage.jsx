@@ -46,7 +46,7 @@ function MoreWork({ current }) {
                     <span className="font-display text-2xl text-ink transition-colors group-hover:text-violet-deep">{p.title}</span>
                     <Arrow direction={external ? 'up-right' : 'right'} className="shrink-0 text-ink-3 group-hover:text-violet" />
                   </span>
-                  <span className="mt-1 block font-mono text-[0.68rem] uppercase tracking-[0.12em] text-ink-3">{p.role}</span>
+                  <span className="mt-1 block text-[0.9375rem] text-ink-3">{p.role}</span>
                 </span>
               </a>
             </li>

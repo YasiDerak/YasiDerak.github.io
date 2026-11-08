@@ -54,8 +54,8 @@ export function Placeholder({ label, path }) {
         <circle cx="9" cy="10" r="1.8" stroke="currentColor" strokeWidth="1.4" />
         <path d="M4 18l5-5 4 4 3-3 4 4" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
       </svg>
-      {label && <p className="font-display text-lg italic text-violet-deep/80">{label}</p>}
-      {path && <p className="font-mono text-[0.68rem] tracking-wide text-ink-3">images/{path}</p>}
+      {label && <p className="font-display text-lg text-violet-deep/80">{label}</p>}
+      {path && <p className="text-[0.75rem] text-ink-3">images/{path}</p>}
     </div>
   )
 }

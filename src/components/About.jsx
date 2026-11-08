@@ -1,53 +1,77 @@
-import { about } from '../content/site'
-import Reveal from './ui/Reveal'
+import { about, education, experience } from '../content/site'
+
+function Timeline({ items }) {
+  return (
+    <ol className="relative mt-6 border-l border-line-strong">
+      {items.map((job) => (
+        <li key={job.role + job.company} className="relative pb-9 pl-7 last:pb-0">
+          <span
+            aria-hidden="true"
+            className={`absolute -left-[5px] top-[0.45rem] h-[9px] w-[9px] rounded-full ${
+              job.current ? 'bg-firouzeh-deep ring-4 ring-firouzeh/25' : 'border border-line-strong bg-porcelain'
+            }`}
+          />
+          <p className="text-[0.875rem] tabular-nums text-ink-3">
+            {job.period}
+            {job.current && <span className="ml-2 font-semibold text-firouzeh-deep">Current role</span>}
+          </p>
+          <h4 className="mt-1 text-[1.125rem] font-semibold leading-snug">{job.role}</h4>
+          <p className="text-ink-2">
+            {job.company}
+            {job.place && <span className="text-ink-3">, {job.place}</span>}
+          </p>
+          {job.summary && <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-2">{job.summary}</p>}
+        </li>
+      ))}
+    </ol>
+  )
+}
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="py-20 md:py-28">
-      <div className="container-page">
-        <div className="grid gap-14 md:grid-cols-12 md:gap-10">
-          <Reveal className="md:col-span-4">
-            <p className="eyebrow flex items-center gap-3">
-              <span className="text-violet">02</span>
-              <span className="h-px w-8 bg-line-strong" aria-hidden="true" />
-              About
-            </p>
-            {about.facts?.length > 0 && (
-              <dl className="mt-8 max-w-[22rem] space-y-3">
-                {about.facts.map((f) => (
-                  <div key={f.label} className="flex items-baseline justify-between gap-4 border-b border-line pb-3 text-sm">
-                    <dt className="text-ink-3">{f.label}</dt>
-                    <dd className="text-right text-ink">{f.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            )}
-          </Reveal>
-
-          <div className="md:col-span-7 md:col-start-6">
-            <Reveal>
-              <h2 id="about-title" className="display text-[clamp(2.2rem,4.6vw,3.6rem)] leading-[1.05] text-ink">
-                {about.greeting.split('—')[0]}—
-                <em className="text-violet-deep">{about.greeting.split('—')[1]}</em>
-              </h2>
-            </Reveal>
-            <div className="mt-10 space-y-6">
-              {about.paragraphs.filter(Boolean).map((p, i) => (
-                <Reveal key={i} delay={i * 80}>
-                  <p className="text-lg leading-relaxed text-ink-2">{p}</p>
-                </Reveal>
-              ))}
-            </div>
-
-            <div className="mt-16 grid gap-8 border-t border-line pt-10 sm:grid-cols-3 sm:gap-6">
-              {about.principles.map((p, i) => (
-                <Reveal key={p.title} delay={i * 90}>
-                  <p className="font-display text-[1.35rem] italic leading-tight text-ink">{p.title}</p>
-                  <p className="mt-2 text-[0.92rem] leading-relaxed text-ink-3">{p.text}</p>
-                </Reveal>
-              ))}
-            </div>
+    <section id="about" aria-labelledby="about-title" className="scroll-mt-16 bg-porcelain py-20 md:py-28">
+      <div className="container-page grid gap-16 md:grid-cols-12 md:gap-10">
+        <div className="md:col-span-6">
+          <h2 id="about-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">
+            About
+          </h2>
+          <p className="mt-8 text-[1.375rem] font-semibold leading-snug">{about.greeting}</p>
+          <div className="mt-5 max-w-[36rem] space-y-5 text-ink-2">
+            {about.paragraphs.filter(Boolean).map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
+          {about.facts?.length > 0 && (
+            <dl className="mt-10 grid max-w-[36rem] grid-cols-3 gap-6 border-t border-line-strong pt-6">
+              {about.facts.map((f) => (
+                <div key={f.label}>
+                  <dt className="text-[0.875rem] text-ink-3">{f.label}</dt>
+                  <dd className="mt-1 font-semibold leading-snug">{f.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+        </div>
+
+        <div id="experience" className="scroll-mt-24 md:col-span-5 md:col-start-8">
+          <h3 className="font-display text-[1.75rem] font-medium">Experience</h3>
+          <Timeline items={experience} />
+
+          {education.length > 0 && (
+            <>
+              <h3 className="mt-14 font-display text-[1.75rem] font-medium">Education</h3>
+              <ul className="mt-5 space-y-4">
+                {education.map((e) => (
+                  <li key={e.title}>
+                    <p className="font-semibold leading-snug">{e.title}</p>
+                    <p className="text-ink-2">
+                      {e.school} <span className="tabular-nums text-ink-3">{e.period}</span>
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
     </section>

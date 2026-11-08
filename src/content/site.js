@@ -27,23 +27,15 @@ export const links = {
 export const nav = [
   { id: 'work', label: 'Work' },
   { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'expertise', label: 'Expertise' },
+  { id: 'skills', label: 'What I do' },
 ]
 
 export const hero = {
-  title: 'Product & UI/UX Designer',
-  // Keep the headline short — it's the largest line on the page.
-  headline: ['Products that make sense', 'and feel good to use.'],
+  title: 'Product & UI/UX Designer in Vancouver',
+  headline: 'I design products that make sense and feel good to use.',
   intro:
-    'I’m a product designer in Vancouver, leading product, design and brand at FaydenAI. I work across the whole arc of a product — the question it answers, the journey through it, and the interface people actually touch.',
-  facts: [
-    { label: 'Now', value: 'Product & Design Lead, FaydenAI' },
-    { label: 'Focus', value: 'Product design · UX/UI · Brand' },
-    { label: 'Based in', value: 'Vancouver, Canada' },
-  ],
-  // Your photo, shown on the right of the first screen. Remove the file (or
-  // this line) and the hero shows a small stack of project covers instead.
+    'I lead product, design and brand at FaydenAI, working across the whole arc of a product: the question it answers, the journey through it, and the interface people actually touch.',
+  // Your photo, shown in the arch on the first screen.
   portrait: 'about/portrait.jpg',
 }
 
@@ -86,7 +78,7 @@ export const experience = [
     current: true,
     role: 'Product & Design Lead',
     company: 'FaydenAI',
-    period: 'Jun 2025 — Present',
+    period: 'Jun 2025 – present',
     place: 'Vancouver',
     summary:
       'I lead product design, user experience and brand across FaydenAI’s AI-powered products — including Aplomb. I set product and UX direction, design the web and mobile experiences, and work closely with engineering to turn ideas into polished, user-focused products.',
@@ -102,15 +94,15 @@ export const experience = [
   {
     role: 'UI/UX Designer',
     company: 'Freelance',
-    period: 'Apr 2022 — May 2025',
-    place: 'Vancouver · Remote',
+    period: 'Apr 2022 – May 2025',
+    place: 'Vancouver, remote',
     summary: 'Independent UI/UX design for websites and digital products.',
   },
   {
     role: 'Web & UI/UX Designer',
-    company: 'Immibright — immigration & visa services',
-    period: 'Dec 2024 — Feb 2025',
-    place: 'Vancouver · Contract',
+    company: 'Immibright',
+    period: 'Dec 2024 – Feb 2025',
+    place: 'Vancouver, contract',
     summary:
       'Designed the responsive website in Figma and built and launched it in Odoo, in English and Persian — including the logos, icons and banners, a clearer navigation, and a smoother assessment form and booking flow.',
   },
@@ -120,7 +112,7 @@ export const education = [
   {
     title: 'Bachelor’s degree, Architecture',
     school: 'Azad University (IAU)',
-    period: '2014 — 2018',
+    period: '2014–2018',
   },
   {
     title: 'YWCA Tech Connect',
@@ -148,6 +140,7 @@ export const projects = [
     tags: ['Brand', 'Mobile app', 'Website'],
     image: 'aplomb/brand-board.jpg',
     video: 'media/aplomb-showcase.mp4',
+    plate: '#DCE3FB', // background colour behind the cover
   },
   {
     title: 'Immibright',
@@ -157,6 +150,7 @@ export const projects = [
     tags: ['Website', 'Bilingual', 'Branding'],
     image: 'work/immibright.jpg',
     link: 'https://www.immibright.com/',
+    plate: '#F2E7DA',
   },
   // TODO: add more projects (Behance has your archive). Copy the shape above.
   {

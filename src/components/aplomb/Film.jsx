@@ -190,7 +190,7 @@ export default function Film() {
           </div>
         </div>
         <figcaption className="mt-4 flex items-center justify-between text-sm text-ink-3">
-          <span>Showcase film · {Math.round(film.duration)} seconds</span>
+          <span>Showcase film, {Math.round(film.duration)} seconds</span>
           <span className="hidden md:inline">Click a scene to jump straight to it</span>
         </figcaption>
       </figure>

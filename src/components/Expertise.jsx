@@ -1,58 +1,32 @@
 import { expertise, tools } from '../content/site'
-import Reveal from './ui/Reveal'
-import { SectionHeader } from './ui/Bits'
 
 export default function Expertise() {
   return (
-    <section id="expertise" aria-labelledby="expertise-title" className="py-20 md:py-28">
+    <section id="skills" aria-labelledby="skills-title" className="scroll-mt-16 py-20 md:py-28">
       <div className="container-page">
-        <Reveal>
-          <SectionHeader
-            index="04"
-            label="Skills & expertise"
-            title={
-              <span id="expertise-title">
-                Where product thinking <em className="text-violet-deep">meets visual craft.</em>
-              </span>
-            }
-          />
-        </Reveal>
-
-        <div className="mt-12 grid gap-12 md:mt-16 lg:grid-cols-3 lg:gap-10">
-          {expertise.map((g, gi) => (
-            <Reveal key={g.group} delay={gi * 100}>
-              <h3 className="flex items-baseline gap-3 border-b border-ink/80 pb-4">
-                <span className="font-mono text-xs text-violet">0{gi + 1}</span>
-                <span className="font-display text-2xl text-ink">{g.group}</span>
-              </h3>
-              <ul>
+        <h2 id="skills-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">
+          What I do
+        </h2>
+        <div className="mt-12 grid gap-12 md:grid-cols-3 md:gap-10">
+          {expertise.map((g) => (
+            <div key={g.group}>
+              <h3 className="border-b-2 border-firouzeh pb-3 font-display text-[1.375rem] font-medium">{g.group}</h3>
+              <ul className="mt-5 space-y-4">
                 {g.items.map((it) => (
-                  <li
-                    key={it.name}
-                    className="group relative border-b border-line py-5 transition-[padding] duration-500 ease-[var(--ease-out-soft)] hover:pl-3"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="absolute left-0 top-1/2 h-0 w-[2px] -translate-y-1/2 bg-violet transition-all duration-500 ease-[var(--ease-out-soft)] group-hover:h-8"
-                    />
-                    <p className="font-medium text-ink">{it.name}</p>
-                    <p className="mt-1 text-[0.92rem] text-ink-3">{it.note}</p>
+                  <li key={it.name}>
+                    <p className="font-semibold leading-snug">{it.name}</p>
+                    <p className="text-[0.9375rem] text-ink-3">{it.note}</p>
                   </li>
                 ))}
               </ul>
-            </Reveal>
+            </div>
           ))}
         </div>
-
-        {tools.length > 0 && (
-          <Reveal className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pt-8">
-            <span className="eyebrow">Tools</span>
-            {tools.map((t) => (
-              <span key={t} className="text-ink-2">
-                {t}
-              </span>
-            ))}
-          </Reveal>
+        {tools?.length > 0 && (
+          <p className="mt-14 max-w-[48rem] text-ink-2">
+            <span className="font-semibold text-ink">Tools I use: </span>
+            {tools.join(', ')}.
+          </p>
         )}
       </div>
     </section>

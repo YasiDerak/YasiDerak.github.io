@@ -18,7 +18,7 @@ function Chapter({ index, title, intro, children, className = '' }) {
     <section id={c.id} aria-labelledby={`${c.id}-title`} className={`scroll-mt-24 py-14 md:py-20 ${className}`}>
       <Reveal className="mb-10 grid gap-5 md:mb-12 md:grid-cols-12 md:gap-10">
         <p className="flex items-baseline gap-3 md:col-span-3">
-          <span className="font-display text-[2.2rem] italic leading-none text-violet">{c.n}</span>
+          <span className="font-display text-[2.2rem] leading-none text-violet">{c.n}</span>
           <span className="eyebrow">{c.label}</span>
         </p>
         <div className="md:col-span-9">
@@ -65,10 +65,10 @@ export function Overview() {
           <figure className="border-l border-line-strong pl-6">
             <p className="font-display text-3xl text-ink">
               {definition.word}
-              <span className="ml-2 font-display text-base italic text-ink-3">{definition.kind}</span>
+              <span className="ml-2 text-base text-ink-3">{definition.kind}</span>
             </p>
             <p className="mt-2 font-mono text-xs text-ink-3">/əˈplɒm/</p>
-            <blockquote className="mt-4 font-display text-xl italic leading-snug text-violet-deep">
+            <blockquote className="mt-4 font-display text-xl leading-snug text-violet-deep">
               {definition.meaning}
             </blockquote>
           </figure>
@@ -93,8 +93,7 @@ export function Role() {
               <h4 className="font-display text-[1.6rem] text-ink transition-colors duration-300 group-hover:text-violet-deep">
                 {c.title}
               </h4>
-              <span className="font-mono text-xs text-ink-3">0{i + 1}</span>
-            </div>
+                          </div>
             <p className="mt-3 leading-relaxed text-ink-2">{c.text}</p>
           </Reveal>
         ))}
@@ -170,7 +169,7 @@ export function System() {
       <Reveal>
         <div className="mb-6 flex items-baseline justify-between">
           <h4 className="eyebrow">Colour</h4>
-          <p className="hidden text-xs text-ink-3 sm:block">Sampled from the brand artwork · click to copy</p>
+          <p className="hidden text-xs text-ink-3 sm:block">Sampled from the brand artwork. Click a colour to copy it.</p>
         </div>
         <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4 lg:grid-cols-7">
           {system.palette.map((c) => (

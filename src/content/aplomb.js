@@ -16,7 +16,7 @@ export const aplomb = {
   meta: [
     { label: 'Company', value: 'FaydenAI' },
     { label: 'My role', value: 'Product & Design Lead' },
-    { label: 'Scope', value: 'Brand identity · iOS & Android app · Landing page' },
+    { label: 'Scope', value: 'Brand identity, iOS & Android app, landing page' },
     { label: 'Status', value: 'Coming soon to App Store, Google Play & Mac' },
     // TODO: add the project timeline, e.g. { label: 'Timeline', value: '2025 — 2026' }
   ],
@@ -32,10 +32,10 @@ export const aplomb = {
       { t: 13, label: 'How it works' },
       { t: 21, label: 'Tools' },
       { t: 26, label: 'Responsive' },
-      { t: 33, label: 'App · Ask' },
-      { t: 41, label: 'App · Answer' },
-      { t: 46, label: 'App · Practise' },
-      { t: 53, label: 'App · Progress' },
+      { t: 33, label: 'App: ask' },
+      { t: 41, label: 'App: answer' },
+      { t: 46, label: 'App: practise' },
+      { t: 53, label: 'App: progress' },
       { t: 58, label: 'The system' },
     ],
   },

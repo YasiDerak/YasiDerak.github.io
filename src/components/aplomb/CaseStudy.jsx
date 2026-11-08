@@ -31,14 +31,11 @@ export default function AplombPage() {
 
           <div className="mt-10 grid items-end gap-10 md:mt-12 md:grid-cols-12">
             <Reveal className="md:col-span-7">
-              <p className="eyebrow">
-                Case study <span className="mx-2 text-line-strong">·</span>
-                <span className="text-violet">Brand · App · Web</span>
-              </p>
-              <h1 id="aplomb-title" className="display mt-5 text-[clamp(4rem,13vw,10.5rem)] leading-[0.85] text-[#122D6F]">
+              <p className="eyebrow">Case study: brand, app and website</p>
+              <h1 id="aplomb-title" className="display mt-4 text-[clamp(3.75rem,11vw,8.5rem)] leading-[1] text-[#122D6F]">
                 Aplomb
               </h1>
-              <p className="mt-5 max-w-xl font-display text-[clamp(1.4rem,2.4vw,2rem)] italic leading-snug text-ink-2">
+              <p className="mt-6 max-w-xl text-[clamp(1.25rem,2vw,1.6rem)] leading-snug text-ink-2">
                 {aplomb.tagline}
               </p>
             </Reveal>
@@ -46,7 +43,7 @@ export default function AplombPage() {
               <dl className="grid grid-cols-2 gap-x-6 gap-y-5">
                 {aplomb.meta.map((m) => (
                   <div key={m.label} className="border-t border-line-strong pt-3">
-                    <dt className="eyebrow text-[0.66rem]">{m.label}</dt>
+                    <dt className="text-[0.8125rem] text-ink-3">{m.label}</dt>
                     <dd className="mt-1.5 text-[0.95rem] leading-snug text-ink">{m.value}</dd>
                   </div>
                 ))}

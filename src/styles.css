@@ -1,48 +1,58 @@
-@import '@fontsource-variable/newsreader/opsz.css';
-@import '@fontsource-variable/newsreader/opsz-italic.css';
-@import '@fontsource-variable/schibsted-grotesk/wght.css';
-@import '@fontsource/ibm-plex-mono/400.css';
-@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource-variable/bodoni-moda/opsz.css';
+@import '@fontsource-variable/figtree/wght.css';
 @import 'tailwindcss';
 
 /* ------------------------------------------------------------------
    Design tokens
-   Warm paper neutrals + a quiet lavender/violet accent.
+   Lapis and turquoise, after Isfahan tilework: lapis is the one bold
+   field (hero + contact), turquoise the accent on it. Everything in
+   between is white, porcelain and night-blue type.
+   Display: Bodoni Moda — high contrast, like the YD mark.
+   Text:    Figtree.
 ------------------------------------------------------------------- */
 @theme {
-  --font-display: 'Newsreader Variable', 'Iowan Old Style', Georgia, serif;
-  --font-sans: 'Schibsted Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-display: 'Bodoni Moda Variable', 'Didot', 'Bodoni 72', Georgia, serif;
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
 
-  --color-paper: #fbf9f6;
-  --color-paper-2: #f5f1eb;
-  --color-sand: #ece5db;
-  --color-line: #e7e0d6;
-  --color-line-strong: #d8cfc3;
+  /* Core palette */
+  --color-lapis: #2b36a8;
+  --color-lapis-deep: #1d2685;
+  --color-night: #10164a;
+  --color-firouzeh: #4fd1c1;
+  --color-firouzeh-deep: #0e7f73;
+  --color-porcelain: #eef1fb;
+  --color-white: #ffffff;
 
-  --color-ink: #1f1b24;
-  --color-ink-2: #4a4452;
-  --color-ink-3: #77707f;
+  /* Text + structure */
+  --color-ink: #10164a;
+  --color-ink-2: #474d77;
+  --color-ink-3: #656a8f;
+  --color-line: #dde1f2;
+  --color-line-strong: #c7cde6;
 
-  --color-lilac-50: #f6f3fb;
-  --color-lilac-100: #eee8f8;
-  --color-lilac-200: #ddd3f0;
-  --color-lilac-300: #c4b6e4;
-  --color-violet: #6a55a8;
-  --color-violet-deep: #47396f;
+  /* Aliases used by the Aplomb case study components */
+  --color-paper: #ffffff;
+  --color-paper-2: #eef1fb;
+  --color-lilac-50: #f5f7fd;
+  --color-lilac-100: #eef1fb;
+  --color-lilac-200: #d9dff7;
+  --color-lilac-300: #b9c3ee;
+  --color-violet: #2b36a8;
+  --color-violet-deep: #1d2685;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --shadow-soft: 0 1px 2px rgb(31 27 36 / 0.04), 0 8px 24px -8px rgb(31 27 36 / 0.08);
-  --shadow-lift: 0 2px 4px rgb(31 27 36 / 0.04), 0 24px 48px -16px rgb(71 57 111 / 0.18);
+  --shadow-soft: 0 1px 2px rgb(16 22 74 / 0.05), 0 10px 24px -12px rgb(16 22 74 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(16 22 74 / 0.05), 0 24px 48px -20px rgb(16 22 74 / 0.25);
 }
 
 @layer base {
   html {
     color-scheme: light;
-    background: var(--color-paper);
+    background: var(--color-white);
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 5rem;
   }
   @media (prefers-reduced-motion: no-preference) {
     html {
@@ -50,23 +60,26 @@
     }
   }
   body {
-    background: var(--color-paper);
+    background: var(--color-white);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 1.0625rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    background: var(--color-lilac-200);
-    color: var(--color-ink);
+    background: var(--color-firouzeh);
+    color: var(--color-night);
   }
   :focus-visible {
-    outline: 2px solid var(--color-violet);
+    outline: 2px solid var(--color-firouzeh-deep);
     outline-offset: 3px;
     border-radius: 6px;
+  }
+  .on-lapis :focus-visible {
+    outline-color: var(--color-firouzeh);
   }
   img,
   video {
@@ -78,7 +91,7 @@
 @layer components {
   .container-page {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1200px;
     margin-inline: auto;
     padding-inline: 1.25rem;
   }
@@ -88,23 +101,40 @@
     }
   }
 
+  /* Small section label: sentence case, never shouted */
   .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-ink-3);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--color-ink-2);
   }
 
+  /* Bodoni at a small optical size: sturdier hairlines that hold up on lapis */
   .display {
     font-family: var(--font-display);
-    font-optical-sizing: auto;
-    font-weight: 380;
-    letter-spacing: -0.025em;
-    line-height: 0.98;
+    font-variation-settings: 'opsz' 24;
+    font-weight: 560;
+    letter-spacing: -0.02em;
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+  .font-display {
+    font-variation-settings: 'opsz' 24;
   }
 
-  /* Underline that draws in on hover */
+  /* Text link: a quiet underline that thickens on hover */
+  .link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    transition: text-decoration-thickness 0.2s, color 0.2s;
+  }
+  .link:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* Kept for the Aplomb page */
   .link-draw {
     background-image: linear-gradient(currentColor, currentColor);
     background-size: 0% 1px;
@@ -116,28 +146,17 @@
   .link-draw:focus-visible {
     background-size: 100% 1px;
   }
-
-  /* Paper grain — very faint, gives the off-white some tooth */
-  .grain::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.35;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.1 0 0 0 0 0.14 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
 }
 
 /* ------------------------------------------------------------------
-   Scroll reveal (driven by <Reveal>) — disabled for reduced motion
+   Scroll reveal (Aplomb page) — disabled for reduced motion
 ------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(14px);
   transition:
-    opacity 0.9s var(--ease-out-soft),
-    transform 0.9s var(--ease-out-soft);
+    opacity 0.8s var(--ease-out-soft),
+    transform 0.8s var(--ease-out-soft);
   transition-delay: var(--reveal-delay, 0ms);
 }
 .reveal.is-visible {
@@ -145,25 +164,46 @@
   transform: none;
 }
 
+/* ------------------------------------------------------------------
+   The hero's one moment: the orbit line draws around the arch and
+   its dot lands; the words settle in just before it.
+------------------------------------------------------------------- */
+@keyframes draw {
+  from { stroke-dashoffset: var(--len); }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes land {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+@keyframes settle {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-orbit {
+  stroke-dasharray: var(--len);
+  animation: draw 2.2s var(--ease-out-soft) 0.5s both;
+}
+.hero-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: land 0.6s var(--ease-out-soft) 2.3s both;
+}
+.hero-in {
+  animation: settle 0.9s var(--ease-out-soft) both;
+  animation-delay: var(--d, 0ms);
+}
+
 @keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgb(106 85 168 / 0.35); }
-  50% { box-shadow: 0 0 0 6px rgb(106 85 168 / 0); }
-}
-@keyframes drift {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(2%, -3%, 0) scale(1.04); }
-}
-@keyframes orbit {
-  to { transform: rotate(360deg); }
+  0%, 100% { box-shadow: 0 0 0 0 rgb(79 209 193 / 0.45); }
+  50% { box-shadow: 0 0 0 6px rgb(79 209 193 / 0); }
 }
 @keyframes bar {
   0%, 100% { transform: scaleY(0.45); }
   50% { transform: scaleY(1); }
 }
-
 .anim-pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
-.anim-drift { animation: drift 18s ease-in-out infinite; }
-.anim-orbit { animation: orbit 40s linear infinite; }
 .anim-bar { animation: bar 1.6s ease-in-out infinite; transform-origin: center; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -172,9 +212,10 @@
     transform: none;
     transition: none;
   }
+  .hero-orbit,
+  .hero-dot,
+  .hero-in,
   .anim-pulse-dot,
-  .anim-drift,
-  .anim-orbit,
   .anim-bar {
     animation: none;
   }
