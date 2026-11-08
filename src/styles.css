@@ -1,50 +1,45 @@
-@import '@fontsource-variable/bodoni-moda/opsz.css';
-@import '@fontsource-variable/figtree/wght.css';
+@import '@fontsource/cormorant-garamond/500.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource-variable/jost/wght.css';
 @import 'tailwindcss';
 
 /* ------------------------------------------------------------------
-   Design tokens
-   Lapis and turquoise, after Isfahan tilework: lapis is the one bold
-   field (hero + contact), turquoise the accent on it. Everything in
-   between is white, porcelain and night-blue type.
-   Display: Bodoni Moda — high contrast, like the YD mark.
-   Text:    Figtree.
+   Design tokens — soft violet with a touch of pink
+   Light violet is the field, a soft violet fills buttons and the
+   contact band (always with dark violet text on it), and pink is a
+   small accent: the blush circle behind the photo, the email button.
+   Display: Cormorant Garamond. Text: Jost.
 ------------------------------------------------------------------- */
 @theme {
-  --font-display: 'Bodoni Moda Variable', 'Didot', 'Bodoni 72', Georgia, serif;
-  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', 'Garamond', Georgia, serif;
+  --font-sans: 'Jost Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Jost Variable', ui-sans-serif, system-ui, sans-serif;
 
-  /* Core palette */
-  --color-lapis: #2b36a8;
-  --color-lapis-deep: #1d2685;
-  --color-night: #10164a;
-  --color-firouzeh: #4fd1c1;
-  --color-firouzeh-deep: #0e7f73;
-  --color-porcelain: #eef1fb;
+  --color-violet: #a58cf0;
+  --color-violet-deep: #6b4fcf;
+  --color-pink: #f7c6da;
+  --color-pink-soft: #fce6ee;
   --color-white: #ffffff;
 
-  /* Text + structure */
-  --color-ink: #10164a;
-  --color-ink-2: #474d77;
-  --color-ink-3: #656a8f;
-  --color-line: #dde1f2;
-  --color-line-strong: #c7cde6;
+  --color-lilac-50: #faf8ff;
+  --color-lilac-100: #f5f1fe;
+  --color-lilac-200: #eae2fc;
+  --color-lilac-300: #d9ccf8;
+
+  --color-ink: #2f2352;
+  --color-ink-2: #544878;
+  --color-ink-3: #6e6394;
+  --color-line: #ece6fa;
+  --color-line-strong: #d9ccf8;
 
   /* Aliases used by the Aplomb case study components */
   --color-paper: #ffffff;
-  --color-paper-2: #eef1fb;
-  --color-lilac-50: #f5f7fd;
-  --color-lilac-100: #eef1fb;
-  --color-lilac-200: #d9dff7;
-  --color-lilac-300: #b9c3ee;
-  --color-violet: #2b36a8;
-  --color-violet-deep: #1d2685;
+  --color-paper-2: #faf8ff;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --shadow-soft: 0 1px 2px rgb(16 22 74 / 0.05), 0 10px 24px -12px rgb(16 22 74 / 0.12);
-  --shadow-lift: 0 2px 4px rgb(16 22 74 / 0.05), 0 24px 48px -20px rgb(16 22 74 / 0.25);
+  --shadow-soft: 0 1px 2px rgb(47 35 82 / 0.05), 0 10px 24px -12px rgb(47 35 82 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(47 35 82 / 0.05), 0 24px 48px -20px rgb(47 35 82 / 0.22);
 }
 
 @layer base {
@@ -70,16 +65,13 @@
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    background: var(--color-firouzeh);
-    color: var(--color-night);
+    background: var(--color-pink);
+    color: var(--color-ink);
   }
   :focus-visible {
-    outline: 2px solid var(--color-firouzeh-deep);
+    outline: 2px solid var(--color-violet-deep);
     outline-offset: 3px;
     border-radius: 6px;
-  }
-  .on-lapis :focus-visible {
-    outline-color: var(--color-firouzeh);
   }
   img,
   video {
@@ -110,17 +102,12 @@
     color: var(--color-ink-2);
   }
 
-  /* Bodoni at a small optical size: sturdier hairlines that hold up on lapis */
   .display {
     font-family: var(--font-display);
-    font-variation-settings: 'opsz' 24;
-    font-weight: 560;
-    letter-spacing: -0.02em;
-    line-height: 1.06;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.02;
     text-wrap: balance;
-  }
-  .font-display {
-    font-variation-settings: 'opsz' 24;
   }
 
   /* Text link: a quiet underline that thickens on hover */
@@ -165,39 +152,28 @@
 }
 
 /* ------------------------------------------------------------------
-   The hero's one moment: the orbit line draws around the arch and
-   its dot lands; the words settle in just before it.
+   The hero's one moment: the words settle in, then the blush circle
+   behind the photo grows into place.
 ------------------------------------------------------------------- */
-@keyframes draw {
-  from { stroke-dashoffset: var(--len); }
-  to { stroke-dashoffset: 0; }
-}
-@keyframes land {
-  0% { transform: scale(0); }
-  70% { transform: scale(1.25); }
-  100% { transform: scale(1); }
-}
 @keyframes settle {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
 }
-.hero-orbit {
-  stroke-dasharray: var(--len);
-  animation: draw 2.2s var(--ease-out-soft) 0.5s both;
-}
-.hero-dot {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: land 0.6s var(--ease-out-soft) 2.3s both;
+@keyframes bloom {
+  from { transform: scale(0.4); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 .hero-in {
   animation: settle 0.9s var(--ease-out-soft) both;
   animation-delay: var(--d, 0ms);
 }
+.hero-bloom {
+  animation: bloom 1.1s var(--ease-out-soft) 0.5s both;
+}
 
 @keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgb(79 209 193 / 0.45); }
-  50% { box-shadow: 0 0 0 6px rgb(79 209 193 / 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgb(165 140 240 / 0.45); }
+  50% { box-shadow: 0 0 0 6px rgb(165 140 240 / 0); }
 }
 @keyframes bar {
   0%, 100% { transform: scaleY(0.45); }
@@ -212,9 +188,8 @@
     transform: none;
     transition: none;
   }
-  .hero-orbit,
-  .hero-dot,
   .hero-in,
+  .hero-bloom,
   .anim-pulse-dot,
   .anim-bar {
     animation: none;

@@ -32,9 +32,8 @@ export const nav = [
 
 export const hero = {
   title: 'Product & UI/UX Designer in Vancouver',
-  headline: 'I design products that make sense and feel good to use.',
   intro:
-    'I lead product, design and brand at FaydenAI, working across the whole arc of a product: the question it answers, the journey through it, and the interface people actually touch.',
+    'I lead product, design and brand at FaydenAI, and design products that make sense and feel good to use: from the question a product answers to the interface people actually touch.',
   // Your photo, shown in the arch on the first screen.
   portrait: 'about/portrait.jpg',
 }
@@ -140,7 +139,7 @@ export const projects = [
     tags: ['Brand', 'Mobile app', 'Website'],
     image: 'aplomb/brand-board.jpg',
     video: 'media/aplomb-showcase.mp4',
-    plate: '#DCE3FB', // background colour behind the cover
+    plate: '#EAE2FC', // background colour behind the cover
   },
   {
     title: 'Immibright',
@@ -150,7 +149,7 @@ export const projects = [
     tags: ['Website', 'Bilingual', 'Branding'],
     image: 'work/immibright.jpg',
     link: 'https://www.immibright.com/',
-    plate: '#F2E7DA',
+    plate: '#FCE6EE',
   },
   // TODO: add more projects (Behance has your archive). Copy the shape above.
   {

@@ -64,7 +64,7 @@ function Project({ p, i }) {
       <Tag {...tagProps} onMouseEnter={play} onMouseLeave={stop} onFocus={play} onBlur={stop} className="group block rounded-2xl">
         <Plate p={p} videoRef={videoRef} />
         <div className="mt-6 max-w-[36rem]">
-          <h3 className="flex flex-wrap items-center gap-3 font-display text-[1.75rem] font-medium leading-tight">
+          <h3 className="flex flex-wrap items-center gap-3 font-display text-[1.75rem] font-semibold leading-tight">
             {p.title}
             {p.placeholder && <PlaceholderTag />}
           </h3>
@@ -73,7 +73,7 @@ function Project({ p, i }) {
             {p.role}. {p.tags.join(', ')}.
           </p>
           {href && (
-            <span className="link mt-4 inline-block font-semibold text-firouzeh-deep">
+            <span className="link mt-4 inline-block font-semibold text-violet-deep">
               {internal ? 'Read the case study' : 'Visit the website'}
             </span>
           )}
@@ -91,7 +91,7 @@ export default function Work() {
           <h2 id="work-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">
             Selected work
           </h2>
-          <a href={links.behance} target="_blank" rel="noreferrer" className="link font-semibold text-firouzeh-deep">
+          <a href={links.behance} target="_blank" rel="noreferrer" className="link font-semibold text-violet-deep">
             More on Behance
           </a>
         </div>

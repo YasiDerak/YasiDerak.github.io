@@ -16,7 +16,7 @@ function CopyEmail() {
     <button
       type="button"
       onClick={copy}
-      className="rounded-full border border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:border-white"
+      className="rounded-full border border-ink/40 px-7 py-3.5 font-medium text-ink transition-colors hover:border-ink"
     >
       <span aria-live="polite">{copied ? 'Email copied' : 'Copy email'}</span>
     </button>
@@ -31,14 +31,14 @@ const elsewhere = [
 
 export default function Contact() {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="on-lapis scroll-mt-16 bg-lapis text-white">
+    <section id="contact" aria-labelledby="contact-title" className="scroll-mt-16 bg-violet text-ink">
       <div className="container-page py-20 md:py-28">
         <h2 id="contact-title" className="display max-w-[16ch] text-[clamp(2.5rem,5.4vw,4.25rem)]">
           Have a product in mind? Let’s talk.
         </h2>
-        <p className="mt-6 max-w-[34rem] text-[1.1875rem] leading-relaxed text-white/80">
+        <p className="mt-6 max-w-[34rem] text-[1.1875rem] leading-relaxed text-ink">
           I’m open to product design roles, freelance projects and collaborations. Write to me at{' '}
-          <a href={links.email} className="link font-semibold text-white">
+          <a href={links.email} className="link font-semibold text-ink">
             {profile.email}
           </a>
           .
@@ -46,16 +46,16 @@ export default function Contact() {
         <div className="mt-10 flex flex-wrap gap-3">
           <a
             href={links.email}
-            className="rounded-full bg-firouzeh px-7 py-3.5 font-semibold text-night transition-colors hover:bg-white"
+            className="rounded-full bg-pink px-7 py-3.5 font-medium text-ink transition-colors hover:bg-white"
           >
             Email me
           </a>
           <CopyEmail />
         </div>
-        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/20 pt-8">
+        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-3 border-t border-ink/20 pt-8">
           {elsewhere.map((s) => (
             <li key={s.label}>
-              <a href={s.href} target="_blank" rel="noreferrer" className="link font-semibold text-white/90 hover:text-white">
+              <a href={s.href} target="_blank" rel="noreferrer" className="link font-medium text-ink">
                 {s.label}
               </a>
             </li>

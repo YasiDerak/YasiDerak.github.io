@@ -18,7 +18,7 @@ function Chapter({ index, title, intro, children, className = '' }) {
     <section id={c.id} aria-labelledby={`${c.id}-title`} className={`scroll-mt-24 py-14 md:py-20 ${className}`}>
       <Reveal className="mb-10 grid gap-5 md:mb-12 md:grid-cols-12 md:gap-10">
         <p className="flex items-baseline gap-3 md:col-span-3">
-          <span className="font-display text-[2.2rem] leading-none text-violet">{c.n}</span>
+          <span className="font-display text-[2.2rem] leading-none text-violet-deep">{c.n}</span>
           <span className="eyebrow">{c.label}</span>
         </p>
         <div className="md:col-span-9">
@@ -41,11 +41,11 @@ export function Overview() {
       <div className="grid gap-12 md:grid-cols-12 md:gap-10">
         <Reveal className="space-y-10 md:col-span-6 md:col-start-4">
           <div>
-            <h4 className="eyebrow mb-3 text-violet">The problem</h4>
+            <h4 className="eyebrow mb-3 text-violet-deep">The problem</h4>
             <p className="text-lg leading-relaxed text-ink-2">{overview.problem}</p>
           </div>
           <div>
-            <h4 className="eyebrow mb-3 text-violet">The idea</h4>
+            <h4 className="eyebrow mb-3 text-violet-deep">The idea</h4>
             <p className="text-lg leading-relaxed text-ink-2">{overview.approach}</p>
           </div>
           <ul className="flex flex-wrap gap-2" aria-label="Moments people prepare for">

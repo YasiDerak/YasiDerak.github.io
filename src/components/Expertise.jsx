@@ -10,7 +10,7 @@ export default function Expertise() {
         <div className="mt-12 grid gap-12 md:grid-cols-3 md:gap-10">
           {expertise.map((g) => (
             <div key={g.group}>
-              <h3 className="border-b-2 border-firouzeh pb-3 font-display text-[1.375rem] font-medium">{g.group}</h3>
+              <h3 className="border-b-2 border-pink pb-3 font-display text-[1.375rem] font-semibold">{g.group}</h3>
               <ul className="mt-5 space-y-4">
                 {g.items.map((it) => (
                   <li key={it.name}>

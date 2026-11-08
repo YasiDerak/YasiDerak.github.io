@@ -8,12 +8,12 @@ function Timeline({ items }) {
           <span
             aria-hidden="true"
             className={`absolute -left-[5px] top-[0.45rem] h-[9px] w-[9px] rounded-full ${
-              job.current ? 'bg-firouzeh-deep ring-4 ring-firouzeh/25' : 'border border-line-strong bg-porcelain'
+              job.current ? 'bg-violet-deep ring-4 ring-pink' : 'border border-line-strong bg-lilac-50'
             }`}
           />
           <p className="text-[0.875rem] tabular-nums text-ink-3">
             {job.period}
-            {job.current && <span className="ml-2 font-semibold text-firouzeh-deep">Current role</span>}
+            {job.current && <span className="ml-2 font-semibold text-violet-deep">Current role</span>}
           </p>
           <h4 className="mt-1 text-[1.125rem] font-semibold leading-snug">{job.role}</h4>
           <p className="text-ink-2">
@@ -29,7 +29,7 @@ function Timeline({ items }) {
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="scroll-mt-16 bg-porcelain py-20 md:py-28">
+    <section id="about" aria-labelledby="about-title" className="scroll-mt-16 bg-lilac-50 py-20 md:py-28">
       <div className="container-page grid gap-16 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-6">
           <h2 id="about-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">
@@ -54,12 +54,12 @@ export default function About() {
         </div>
 
         <div id="experience" className="scroll-mt-24 md:col-span-5 md:col-start-8">
-          <h3 className="font-display text-[1.75rem] font-medium">Experience</h3>
+          <h3 className="font-display text-[1.75rem] font-semibold">Experience</h3>
           <Timeline items={experience} />
 
           {education.length > 0 && (
             <>
-              <h3 className="mt-14 font-display text-[1.75rem] font-medium">Education</h3>
+              <h3 className="mt-14 font-display text-[1.75rem] font-semibold">Education</h3>
               <ul className="mt-5 space-y-4">
                 {education.map((e) => (
                   <li key={e.title}>

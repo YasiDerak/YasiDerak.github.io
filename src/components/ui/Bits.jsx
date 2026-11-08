@@ -2,7 +2,7 @@
 
 export function PlaceholderTag({ children = 'Placeholder' }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full border border-dashed border-lilac-300 bg-lilac-50 px-2 py-0.5 text-[0.75rem] font-semibold text-violet">
+    <span className="inline-flex items-center gap-1 rounded-full border border-dashed border-lilac-300 bg-lilac-50 px-2 py-0.5 text-[0.75rem] font-semibold text-violet-deep">
       {children}
     </span>
   )

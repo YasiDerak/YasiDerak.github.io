@@ -44,7 +44,7 @@ function MoreWork({ current }) {
                 <span>
                   <span className="flex items-center justify-between gap-3">
                     <span className="font-display text-2xl text-ink transition-colors group-hover:text-violet-deep">{p.title}</span>
-                    <Arrow direction={external ? 'up-right' : 'right'} className="shrink-0 text-ink-3 group-hover:text-violet" />
+                    <Arrow direction={external ? 'up-right' : 'right'} className="shrink-0 text-ink-3 group-hover:text-violet-deep" />
                   </span>
                   <span className="mt-1 block text-[0.9375rem] text-ink-3">{p.role}</span>
                 </span>

@@ -27,7 +27,7 @@ src/
     site.js          ← profile, links, hero, about, experience, projects, expertise
     aplomb.js        ← the Aplomb case study (copy, film chapters, palette, images)
   assets/images/
-    brand/           ← the YD Design logo (night-blue and white versions, plus the original)
+    brand/           ← the YD Design logo (ink-violet version, plus the original)
     aplomb/          ← Aplomb case-study images (brand board and crops)
     work/            ← project card previews
     about/           ← your photo (portrait.jpg, 4:5), shown in the hero
@@ -110,15 +110,16 @@ ffmpeg -i aplomb-showcase.mp4 -vf "scale=1280:-2" -c:v libx264 -crf 26 -preset s
 
 ### Design tokens
 
-Colours, fonts and shadows are defined once in `src/styles.css` under `@theme` and used as Tailwind classes (`bg-lapis`, `text-firouzeh-deep`, `font-display`, …).
+Colours, fonts and shadows are defined once in `src/styles.css` under `@theme` and used as Tailwind classes (`bg-lilac-100`, `bg-violet`, `text-violet-deep`, `font-display`, …).
 
-- **Lapis** `#2B36A8`: the one bold colour, used for the hero and the contact section
-- **Turquoise** `#4FD1C1` on lapis, **deep turquoise** `#0E7F73` for links on white
-- **Night** `#10164A` for text, **porcelain** `#EEF1FB` for quieter sections, white for everything else
-- **Display:** Bodoni Moda (self-hosted), a high-contrast serif like the YD mark
-- **Text:** Figtree (self-hosted)
+- **Light violet** `#F5F1FE`: the first screen; `#FAF8FF` for quieter sections
+- **Violet** `#A58CF0`: buttons and the contact band, always with dark text on it
+- **Deep violet** `#6B4FCF`: links and small accents on white
+- **Pink** `#F7C6DA`: a touch only, behind the photo and on the email button
+- **Ink** `#2F2352` for text
+- **Display:** Cormorant Garamond (self-hosted). **Text:** Jost (self-hosted)
 
-The hero's photo sits in an arch (a nod to architecture), and the turquoise line that draws around it once on load comes from the orbit in the YD logo. That's the page's one animation.
+The hero's one animation: the words settle in and the pink circle behind the photo blooms into place. Visitors who prefer reduced motion see it still.
 
 Projects marked `placeholder: true` stay hidden on the live page until you fill them in.
 
