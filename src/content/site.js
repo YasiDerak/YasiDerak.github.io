@@ -50,8 +50,8 @@ export const hero = {
 export const about = {
   greeting: 'Hi, I’m Yasaman — most people call me Yasi.',
   paragraphs: [
-    'I trained as an architect, and I still think like one: start with the people who’ll use the space, understand how they move through it, then make every detail earn its place. Along the way I ran my own art gallery in Shiraz, showing my paintings and sculpture, and spent several years in digital marketing — making campaigns, content, and eventually leading a small team.',
-    'Design became the place where all of that meets. Since 2022 I’ve worked as a UI/UX designer in Vancouver, and today I lead product, design and brand at FaydenAI — a small team building AI-powered products, including Aplomb.',
+    'I trained as an architect, and I still think like one: start with the people who’ll use the space, understand how they move through it, then make every detail earn its place.',
+    'That way of thinking carried straight into digital product design. Since 2022 I’ve worked as a UI/UX designer in Vancouver, and today I lead product, design and brand at FaydenAI — a small team building AI-powered products, including Aplomb.',
     'Day to day that means moving between strategy and detail: shaping product direction, turning research into decisions, designing web and mobile interfaces, building the brand, and working closely with the engineers who bring it to life. I like turning complex ideas into things that are easy to use — and, where I can, add a little joy to the journey.',
   ],
   // Three short beliefs about how you work. Edit freely — they should sound like you.
@@ -72,7 +72,7 @@ export const about = {
   // Small facts shown in the About section.
   facts: [
     { label: 'Based in', value: 'Vancouver, Canada' },
-    { label: 'Background', value: 'Architecture, fine art, marketing' },
+    { label: 'Background', value: 'Architecture' },
     { label: 'Languages', value: 'English & Persian' },
   ],
 }
