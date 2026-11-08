@@ -153,7 +153,7 @@
 
 /* ------------------------------------------------------------------
    Hero motion: the words settle in, the photo's violet frame slowly
-   shimmers through violet shades, and the hand on the badge waves.
+   shimmers through violet shades.
 ------------------------------------------------------------------- */
 @property --frame-angle {
   syntax: '<angle>';
@@ -166,12 +166,6 @@
 }
 @keyframes frame-turn {
   to { --frame-angle: 360deg; }
-}
-@keyframes wave {
-  0%, 60%, 100% { transform: rotate(0deg); }
-  10%, 30% { transform: rotate(16deg); }
-  20%, 40% { transform: rotate(-8deg); }
-  50% { transform: rotate(10deg); }
 }
 .hero-in {
   animation: settle 0.9s var(--ease-out-soft) both;
@@ -187,10 +181,6 @@
     var(--color-violet)
   );
   animation: frame-turn 9s linear infinite;
-}
-.wave {
-  transform-origin: 70% 75%;
-  animation: wave 2.8s ease-in-out 1.2s infinite;
 }
 
 @keyframes pulse-dot {
@@ -212,7 +202,6 @@
   }
   .hero-in,
   .arch-frame,
-  .wave,
   .anim-pulse-dot,
   .anim-bar {
     animation: none;

@@ -119,7 +119,7 @@ Colours, fonts and shadows are defined once in `src/styles.css` under `@theme` a
 - **Ink** `#2F2352` for text
 - **Display:** Cormorant Garamond (self-hosted). **Text:** Jost (self-hosted)
 
-Hero motion: the words settle in, the photo's violet frame slowly shimmers through violet shades, and the hand on the "Hi, I'm Yasi" badge waves. Visitors who prefer reduced motion see it all still.
+Hero motion: the words settle in, the photo's violet frame slowly shimmers through violet shades. Visitors who prefer reduced motion see it all still.
 
 Projects marked `placeholder: true` stay hidden on the live page until you fill them in.
 

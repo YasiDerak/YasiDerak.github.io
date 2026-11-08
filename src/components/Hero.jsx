@@ -5,7 +5,7 @@ const ARCH = '50% 50% 1.25rem 1.25rem / 40% 40% 1.25rem 1.25rem'
 
 /**
  * The photo in a soft arch. Its violet frame slowly shimmers through
- * violet shades, and a small badge says hello with a waving hand.
+ * violet shades.
  */
 function ArchPortrait({ src }) {
   return (
@@ -15,10 +15,6 @@ function ArchPortrait({ src }) {
           {src && <img src={src} alt={`Portrait of ${profile.name}`} decoding="async" className="h-full w-full object-cover" />}
         </div>
       </div>
-      <figcaption className="hero-in absolute -bottom-5 -left-4 flex items-center gap-2 rounded-full bg-white px-5 py-3 font-medium text-ink shadow-[var(--shadow-soft)] sm:-left-8" style={{ '--d': '700ms' }}>
-        <span className="wave inline-block text-[1.25rem] leading-none" aria-hidden="true">👋</span>
-        Hi, I’m Yasi
-      </figcaption>
     </figure>
   )
 }

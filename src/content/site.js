@@ -39,10 +39,10 @@ export const hero = {
 }
 
 export const about = {
-  greeting: 'Hi, I’m Yasaman — most people call me Yasi.',
+  greeting: 'I’m Yasaman, a UX and product designer in Vancouver.',
   paragraphs: [
-    'I trained as an architect, and I still think like one: start with the people who’ll use the space, understand how they move through it, then make every detail earn its place.',
-    'That way of thinking carried straight into digital product design. Since 2022 I’ve worked as a UI/UX designer in Vancouver, and today I lead product, design and brand at FaydenAI — a small team building AI-powered products, including Aplomb.',
+    'I studied architecture, and it still shapes how I design: start with the people who’ll use the space, understand how they move through it, then make every detail earn its place.',
+    'That way of thinking carried into UX and product design. Since 2022 I’ve worked as a UI/UX designer in Vancouver, and today I lead product, design and brand at FaydenAI — a small team building AI-powered products, including Aplomb.',
     'Day to day that means moving between strategy and detail: shaping product direction, turning research into decisions, designing web and mobile interfaces, building the brand, and working closely with the engineers who bring it to life. I like turning complex ideas into things that are easy to use — and, where I can, add a little joy to the journey.',
   ],
   // Three short beliefs about how you work. Edit freely — they should sound like you.
