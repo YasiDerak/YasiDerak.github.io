@@ -10,7 +10,7 @@ function ArchPortrait({ src }) {
         className="hero-bloom absolute -bottom-6 -right-8 aspect-square w-[62%] rounded-full bg-pink"
       />
       <div
-        className="relative aspect-[4/5] overflow-hidden border-[6px] border-white bg-lilac-200 shadow-[var(--shadow-lift)]"
+        className="relative aspect-[4/5] overflow-hidden border-[6px] border-violet bg-lilac-200 shadow-[var(--shadow-lift)]"
         style={{ borderRadius: '50% 50% 1.25rem 1.25rem / 40% 40% 1.25rem 1.25rem' }}
       >
         {src && <img src={src} alt={`Portrait of ${profile.name}`} decoding="async" className="h-full w-full object-cover" />}
