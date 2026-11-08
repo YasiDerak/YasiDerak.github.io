@@ -4,3 +4,4 @@ dist
 *.local
 .claude
 portfolio-standalone.html
+photo-preview/
