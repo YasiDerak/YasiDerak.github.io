@@ -59,13 +59,14 @@ export default function About() {
 
           {education.length > 0 && (
             <>
-              <h3 className="mt-14 font-display text-[1.75rem] font-semibold">Education</h3>
+              <h3 className="mt-14 font-display text-[1.75rem] font-semibold">Education and certificates</h3>
               <ul className="mt-5 space-y-4">
                 {education.map((e) => (
                   <li key={e.title}>
                     <p className="font-semibold leading-snug">{e.title}</p>
                     <p className="text-ink-2">
-                      {e.school} <span className="tabular-nums text-ink-3">{e.period}</span>
+                      {e.school}
+                      {e.period && <span className="tabular-nums text-ink-3"> {e.period}</span>}
                     </p>
                   </li>
                 ))}

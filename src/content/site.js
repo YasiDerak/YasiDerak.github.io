@@ -114,6 +114,11 @@ export const education = [
     period: '2014–2018',
   },
   {
+    title: 'Google UX Design Professional Certificate',
+    school: 'Google',
+    period: '', // TODO: add the year you earned it
+  },
+  {
     title: 'YWCA Tech Connect',
     school: 'YWCA BC',
     period: '2024',
