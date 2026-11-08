@@ -146,7 +146,7 @@ export const projects = [
     // tags and an image once Faydesk is ready to show.
     title: 'Faydesk',
     comingSoon: true,
-    plate: '#FCE6EE',
+    plate: '#E4DAFB',
   },
 ]
 

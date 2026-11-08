@@ -115,7 +115,7 @@ Colours, fonts and shadows are defined once in `src/styles.css` under `@theme` a
 - **Light violet** `#F5F1FE`: the first screen; `#FAF8FF` for quieter sections
 - **Violet** `#A58CF0`: buttons and the contact band, always with dark text on it
 - **Deep violet** `#6B4FCF`: links and small accents on white
-- **Pink** `#F7C6DA`: a small touch only (menu underline, Faydesk card)
+- **Pink** `#F7C6DA`: a small touch only (menu underline, skill headings)
 - **Ink** `#2F2352` for text
 - **Display:** Cormorant Garamond (self-hosted). **Text:** Jost (self-hosted)
 
