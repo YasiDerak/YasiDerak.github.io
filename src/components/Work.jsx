@@ -9,7 +9,7 @@ import { PlaceholderTag } from './ui/Bits'
 function Plate({ p, videoRef }) {
   const src = img(p.image)
   return (
-    <div className="relative aspect-[5/4] overflow-hidden rounded-2xl p-5 sm:p-8" style={{ background: p.plate || 'var(--color-porcelain)' }}>
+    <div className="relative aspect-[5/4] overflow-hidden rounded-2xl p-5 sm:p-8" style={{ background: p.plate || 'var(--color-lilac-50)' }}>
       {src ? (
         <div className="relative h-full w-full overflow-hidden rounded-lg">
           <img
@@ -30,6 +30,11 @@ function Plate({ p, videoRef }) {
               className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
             />
           )}
+        </div>
+      ) : p.comingSoon ? (
+        <div className="flex h-full w-full flex-col items-center justify-center rounded-lg border border-white/70 bg-white/40 text-center">
+          <span className="font-display text-[clamp(2.5rem,5vw,3.75rem)] font-semibold leading-none text-ink">{p.title}</span>
+          <span className="mt-4 rounded-full bg-white px-4 py-1.5 text-[0.875rem] font-medium text-violet-deep">Coming soon</span>
         </div>
       ) : (
         <div className="flex h-full w-full items-center justify-center rounded-lg border border-dashed border-line-strong text-center text-sm text-ink-3">
@@ -68,10 +73,14 @@ function Project({ p, i }) {
             {p.title}
             {p.placeholder && <PlaceholderTag />}
           </h3>
-          <p className="mt-2 text-ink-2">{p.description}</p>
-          <p className="mt-3 text-[0.9375rem] text-ink-3">
-            {p.role}. {p.tags.join(', ')}.
-          </p>
+          {p.comingSoon && <p className="mt-2 text-ink-2">More about this product here shortly.</p>}
+          {p.description && <p className="mt-2 text-ink-2">{p.description}</p>}
+          {p.role && (
+            <p className="mt-3 text-[0.9375rem] text-ink-3">
+              {p.role}
+              {p.tags?.length ? `. ${p.tags.join(', ')}.` : '.'}
+            </p>
+          )}
           {href && (
             <span className="link mt-4 inline-block font-semibold text-violet-deep">
               {internal ? 'Read the case study' : 'Visit the website'}

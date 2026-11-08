@@ -17,7 +17,17 @@ export const projectTitle = (slug) => projects.find((p) => p.slug === slug)?.tit
 
 /** A short strip of the other projects, so a visitor can keep going. */
 function MoreWork({ current }) {
-  const others = projects.filter((p) => p.slug !== current && !p.placeholder).slice(0, 2)
+  const others = projects.filter((p) => p.slug !== current && !p.placeholder && (p.slug || p.link)).slice(0, 2)
+  if (!others.length) {
+    return (
+      <div className="container-page py-14 md:py-20">
+        <a href="#work" className="group inline-flex items-center gap-2 font-medium text-violet-deep">
+          <Arrow direction="right" className="rotate-180 transition-transform duration-300 group-hover:-translate-x-0.5" />
+          <span className="link">Back to all projects</span>
+        </a>
+      </div>
+    )
+  }
   return (
     <section aria-labelledby="more-work-title" className="container-page py-20 md:py-28">
       <div className="flex flex-wrap items-end justify-between gap-6">

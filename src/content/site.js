@@ -142,24 +142,11 @@ export const projects = [
     plate: '#EAE2FC', // background colour behind the cover
   },
   {
-    title: 'Immibright',
-    description:
-      'A bilingual (English & Persian) website for a Canadian immigration and visa consultancy — designed in Figma, built and launched in Odoo.',
-    role: 'Web & UI/UX design',
-    tags: ['Website', 'Bilingual', 'Branding'],
-    image: 'work/immibright.jpg',
-    link: 'https://www.immibright.com/',
+    // Details to come. Remove `comingSoon` and add a description, role,
+    // tags and an image once Faydesk is ready to show.
+    title: 'Faydesk',
+    comingSoon: true,
     plate: '#FCE6EE',
-  },
-  // TODO: add more projects (Behance has your archive). Copy the shape above.
-  {
-    placeholder: true,
-    title: 'Project title',
-    description: 'A short line on what the product is and the problem it solves.',
-    role: 'Your role',
-    tags: ['Mobile app', 'UX'],
-    image: 'work/project-2.jpg',
-    link: null,
   },
 ]
 

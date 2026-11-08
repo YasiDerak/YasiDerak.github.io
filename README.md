@@ -60,7 +60,7 @@ Still to add:
 
 | What | Where |
 |---|---|
-| More projects (Aplomb and Immibright are in; one placeholder remains) | `site.js` → `projects` + images in `src/assets/images/work/` |
+| Faydesk details (it shows as "Coming soon" for now) | `site.js` → `projects` + images in `src/assets/images/work/` |
 | Aplomb timeline | `aplomb.js` → `meta` |
 | Aplomb typeface name(s) | `aplomb.js` → `system.typefaces` |
 
