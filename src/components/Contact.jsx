@@ -31,7 +31,12 @@ const elsewhere = [
 
 export default function Contact() {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="scroll-mt-16 bg-lilac-200 text-ink">
+    <section id="contact" aria-labelledby="contact-title" className="relative isolate scroll-mt-16 overflow-hidden bg-lilac-200 text-ink">
+      <div
+        aria-hidden="true"
+        className="morph morph-strong pointer-events-none absolute -right-20 -top-16 -z-10 h-72 w-80 opacity-60 md:-right-10 md:top-10 md:h-96 md:w-[28rem]"
+        style={{ animationDuration: '13s' }}
+      />
       <div className="container-page py-20 md:py-28">
         <h2 id="contact-title" className="display max-w-[16ch] text-[clamp(2.5rem,5.4vw,4.25rem)]">
           Have a product in mind? Let’s talk.

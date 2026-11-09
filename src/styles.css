@@ -152,35 +152,33 @@
 }
 
 /* ------------------------------------------------------------------
-   Hero motion: the words settle in, the photo's violet frame slowly
-   shimmers through violet shades.
+   Morphing shapes: soft violet gradient forms that slowly change shape.
+   The big one sits behind the hero photo; smaller echoes appear at the
+   edge of the hero and in the contact section. The words settle in once
+   on load.
 ------------------------------------------------------------------- */
-@property --frame-angle {
-  syntax: '<angle>';
-  inherits: false;
-  initial-value: 0deg;
-}
 @keyframes settle {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
 }
-@keyframes frame-turn {
-  to { --frame-angle: 360deg; }
+@keyframes morph {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%; transform: rotate(0deg); }
+  33% { border-radius: 61% 39% 45% 55% / 57% 62% 38% 43%; transform: rotate(14deg); }
+  66% { border-radius: 38% 62% 52% 48% / 40% 55% 45% 60%; transform: rotate(-10deg); }
 }
 .hero-in {
   animation: settle 0.9s var(--ease-out-soft) both;
   animation-delay: var(--d, 0ms);
 }
-.arch-frame {
-  background: conic-gradient(
-    from var(--frame-angle),
-    var(--color-violet),
-    var(--color-lilac-300),
-    var(--color-violet-deep),
-    var(--color-lilac-300),
-    var(--color-violet)
-  );
-  animation: frame-turn 9s linear infinite;
+.morph {
+  border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
+  animation: morph 10s ease-in-out infinite;
+}
+.morph-strong {
+  background: linear-gradient(135deg, #8e6cf2 0%, #b896f5 45%, #a9bdff 100%);
+}
+.morph-soft {
+  background: linear-gradient(135deg, #e2d7fb 0%, #c9b8f6 100%);
 }
 
 @keyframes pulse-dot {
@@ -201,7 +199,7 @@
     transition: none;
   }
   .hero-in,
-  .arch-frame,
+  .morph,
   .anim-pulse-dot,
   .anim-bar {
     animation: none;

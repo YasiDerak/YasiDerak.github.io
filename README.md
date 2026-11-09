@@ -119,7 +119,7 @@ Colours, fonts and shadows are defined once in `src/styles.css` under `@theme` a
 - **Ink** `#2F2352` for text
 - **Display:** Cormorant Garamond (self-hosted). **Text:** Jost (self-hosted)
 
-Hero motion: the words settle in, the photo's violet frame slowly shimmers through violet shades. Visitors who prefer reduced motion see it all still.
+Motion: soft violet gradient shapes slowly change form behind the hero photo (and echo in the contact section); the photo and shape drift gently with the mouse; the hero words settle in once. Visitors who prefer reduced motion see it all still.
 
 Projects marked `placeholder: true` stay hidden on the live page until you fill them in.
 
