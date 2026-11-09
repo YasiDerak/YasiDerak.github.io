@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { links, profile } from '../content/site'
+import logo from '../assets/brand/yd-logo.png'
 
 function CopyEmail() {
   const [copied, setCopied] = useState(false)
@@ -42,6 +43,13 @@ export default function Contact() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-[5] h-40 bg-[linear-gradient(to_bottom,#ffffff_20%,transparent)] md:h-56"
       />
+      {/* the YD logo sitting on the shape (the shape turns, the logo stays upright) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-10 top-10 -z-[1] hidden h-96 w-[28rem] items-center justify-center lg:flex"
+      >
+        <img src={logo} alt="" width="478" height="360" loading="lazy" className="w-48 xl:w-52" />
+      </div>
       <div className="container-page py-20 md:py-28">
         <h2 id="contact-title" className="display max-w-[16ch] text-[clamp(2.5rem,5.4vw,4.25rem)]">
           Have a product in mind? Let’s talk.
