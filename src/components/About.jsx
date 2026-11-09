@@ -1,4 +1,5 @@
 import { about, education, experience } from '../content/site'
+import BrandMark from './ui/BrandMark'
 
 function Timeline({ items }) {
   return (
@@ -51,6 +52,10 @@ export default function About() {
               ))}
             </dl>
           )}
+          {/* the YD logo on its shape fills the quiet space under the intro, and stays in view while the timeline scrolls */}
+          <div className="mt-16 md:sticky md:top-32 md:mt-20">
+            <BrandMark className="h-56 w-72 sm:h-64 sm:w-80 lg:h-72 lg:w-[22rem]" />
+          </div>
         </div>
 
         <div id="experience" className="scroll-mt-24 md:col-span-5 md:col-start-8">
