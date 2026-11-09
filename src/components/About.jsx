@@ -53,9 +53,9 @@ export default function About() {
               ))}
             </dl>
           )}
-          {/* the YD logo on its shape, centred in the space under the intro:
-              the same distance above and below, left and right */}
-          <div className="flex flex-1 items-center justify-center pt-16 md:-mr-10 md:py-16">
+          {/* the YD logo on its shape: centred across the left half,
+              a little below the middle of the space under the intro */}
+          <div className="flex flex-1 items-center justify-center pt-16 md:-mr-10 md:pb-4 md:pt-28">
             <BrandMark className="h-56 w-72 sm:h-64 sm:w-80 lg:h-72 lg:w-[22rem]" />
           </div>
         </div>
