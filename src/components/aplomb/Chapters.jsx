@@ -83,8 +83,8 @@ export function Role() {
   return (
     <Chapter
       index={1}
-      title="Leading product, design and brand."
-      intro="My work on Aplomb spans how it looks, how it works, and how it’s presented to the world."
+      title="How it looks, how it works, how it talks."
+      intro="My job on Aplomb: make it look good, work well, and explain itself clearly."
     >
       <ol className="grid gap-x-10 gap-y-2 md:grid-cols-2 lg:grid-cols-3">
         {aplomb.contributions.map((c, i) => (
@@ -105,7 +105,7 @@ export function Role() {
 /* 03 ---------------------------------------------------------------- */
 export function Decisions() {
   return (
-    <Chapter index={2} title={<>Small choices that keep the help <em className="text-violet-deep">just enough.</em></>}>
+    <Chapter index={2} title="Small choices that make a big difference.">
       <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 md:pl-[25%]">
         {aplomb.decisions.map((d, i) => (
           <Reveal key={d.title} delay={(i % 2) * 90} className="border-t border-line-strong pt-5">
@@ -165,7 +165,7 @@ function Swatch({ c }) {
 export function System() {
   const { system } = aplomb
   return (
-    <Chapter index={3} title="A small system that holds everything together." intro={system.intro}>
+    <Chapter index={3} title="A small system that keeps everything in tune." intro={system.intro}>
       <Reveal>
         <div className="mb-6 flex items-baseline justify-between">
           <h4 className="eyebrow">Colour</h4>
@@ -183,7 +183,7 @@ export function System() {
           <h4 className="eyebrow mb-4">The mark</h4>
           <Media src={system.mark} alt="The Aplomb mark: a letter A holding a voice waveform" ratio="4 / 3" className="rounded-[1.5rem]" />
           <p className="mt-3 text-sm text-ink-2">
-            An “A” for Aplomb that holds a voice waveform — confidence and speech in one shape.
+            An “A” for Aplomb holding a voice wave: confidence and speech in one shape.
           </p>
         </Reveal>
 
@@ -256,7 +256,7 @@ export function Final() {
     window.dispatchEvent(new Event('aplomb:replay'))
   }
   return (
-    <Chapter index={4} title="Brand, app and website — one voice." className="pb-8 md:pb-12">
+    <Chapter index={4} title="Brand, app and website, all saying the same thing." className="pb-8 md:pb-12">
       <Reveal>
         <Media
           src={final.image}

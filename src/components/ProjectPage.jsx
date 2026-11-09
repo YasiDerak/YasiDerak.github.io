@@ -73,7 +73,7 @@ export default function ProjectPage({ slug }) {
     return (
       <section className="container-page flex min-h-[70vh] flex-col items-start justify-center pt-32">
         <p className="eyebrow">Not found</p>
-        <h1 className="display mt-4 text-[clamp(2.4rem,6vw,4.5rem)] text-ink">That project isn’t here.</h1>
+        <h1 className="display mt-4 text-[clamp(2.4rem,6vw,4.5rem)] text-ink">Hmm, that project isn’t here.</h1>
         <a href="#work" className="link-draw mt-8 text-violet-deep">
           See all projects
         </a>

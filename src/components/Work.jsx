@@ -73,7 +73,7 @@ function Project({ p, i }) {
             {p.title}
             {p.placeholder && <PlaceholderTag />}
           </h3>
-          {p.comingSoon && <p className="mt-2 text-ink-2">More about this product here shortly.</p>}
+          {p.comingSoon && <p className="mt-2 text-ink-2">Something new is on the way. Details soon.</p>}
           {p.description && <p className="mt-2 text-ink-2">{p.description}</p>}
           {p.role && (
             <p className="mt-3 text-[0.9375rem] text-ink-3">

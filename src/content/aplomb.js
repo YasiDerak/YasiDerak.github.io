@@ -44,9 +44,9 @@ export const aplomb = {
   overview: {
     lead: 'Aplomb is a speaking coach for people who live and work in a language they didn’t grow up speaking.',
     problem:
-      'You know what you want to say. Then the interview starts, or the doctor walks in, and it doesn’t come out the way it sounded in your head. Language courses teach the language — they don’t get you ready for Thursday’s presentation.',
+      'You know exactly what you want to say. Then the interview starts, or the doctor walks in, and the words come out… differently. Language courses teach you a language. They don’t get you ready for Thursday’s presentation.',
     approach:
-      'Aplomb starts from the moment you have coming up — a job interview, a salary review, a pitch, a doctor’s visit — and helps you rehearse it out loud, in your own words, until you’re ready.',
+      'Aplomb starts with the moment you’re nervous about, like a job interview, a salary review, a pitch or a doctor’s visit, and helps you practise it out loud, in your own words, until it feels easy.',
     moments: ['Job interview', 'Salary review', 'Presentation', 'Doctor’s visit', 'Pitch'],
   },
 
@@ -54,27 +54,27 @@ export const aplomb = {
   contributions: [
     {
       title: 'Brand identity',
-      text: 'The Aplomb mark — an “A” holding a voice waveform — plus the colour, type and tone that carry across every surface.',
+      text: 'The Aplomb mark (an “A” holding a voice wave), plus the colours, type and tone that show up everywhere.',
     },
     {
       title: 'Product & UX',
-      text: 'The coaching flow from first question to finished rehearsal, and how the app guides people through it.',
+      text: 'The coaching flow, from “I have something coming up” to “I’m ready”.',
     },
     {
       title: 'Mobile app UI',
-      text: 'Interface design for iOS and Android: the coach, practice, progress and saved-word screens.',
+      text: 'The iOS and Android screens: the coach, practice, progress and saved words.',
     },
     {
       title: 'Design system',
-      text: 'Shared components and tokens that keep the app and the website consistent.',
+      text: 'Shared building blocks that keep the app and the website looking like family.',
     },
     {
       title: 'Landing page',
-      text: 'The aplomb.faydenai.com experience, from the animated hero to the responsive layout.',
+      text: 'aplomb.faydenai.com, from the animated top of the page down to the phone layout.',
     },
     {
       title: 'Digital presentation',
-      text: 'How Aplomb is shown to the world — including the showcase film on this page.',
+      text: 'How Aplomb introduces itself to the world, including the film at the top of this page.',
     },
   ],
 
@@ -82,26 +82,26 @@ export const aplomb = {
   decisions: [
     {
       title: 'Support that fades',
-      text: 'Practice moves from full script, to key points, to on your own — so help steps back as confidence grows.',
+      text: 'Practice goes from full script, to key points, to just you. The help steps back as your confidence steps up.',
     },
     {
       title: 'Your first language, alongside',
-      text: 'Explanations can appear in the user’s own language, so nothing gets lost while learning to say it.',
+      text: 'Explanations can show up in your own language, so nothing gets lost along the way.',
     },
     {
       title: 'Controls for real rehearsal',
-      text: 'Repeat, slow down to 0.75×, ask for another version, or switch tone — more polite, more casual, shorter.',
+      text: 'Repeat, slow down to 0.75×, try another version, or change the tone: more polite, more casual, or shorter.',
     },
     {
       title: 'Privacy by default',
-      text: 'Video takes stay on the phone. A small promise that makes it easier to practise honestly.',
+      text: 'Video takes stay on your phone. Nobody needs to see your tenth attempt.',
     },
   ],
 
   /* ---------- Design system ---------- */
   system: {
     intro:
-      'One small set of decisions, used everywhere: a confident navy mark, a soft periwinkle field, and violet for anything you can act on.',
+      'A few decisions, used everywhere: a confident navy mark, soft periwinkle backgrounds, and violet for anything you can tap.',
     // Colours sampled from the Aplomb brand artwork.
     palette: [
       { name: 'Midnight', hex: '#122D6F', role: 'Mark & headings', light: false },
@@ -125,6 +125,6 @@ export const aplomb = {
   /* ---------- Final ---------- */
   final: {
     image: 'aplomb/brand-board.jpg',
-    closing: 'A brand, an app and a website that all say the same thing: you can do this.',
+    closing: 'A brand, an app and a website with one message: you’ve got this.',
   },
 }

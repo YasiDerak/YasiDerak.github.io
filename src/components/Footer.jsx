@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex items-center gap-4">
           <img src={logo} alt="YD Design" width="478" height="360" loading="lazy" className="h-10 w-auto" />
           <p>
-            © {new Date().getFullYear()} {profile.name}. Designed and built by me.
+            © {new Date().getFullYear()} {profile.name}. Designed and built by me, pixel by pixel.
           </p>
         </div>
         <a href="#top" className="link font-medium text-ink">

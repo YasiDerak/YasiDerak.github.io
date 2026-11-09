@@ -42,7 +42,7 @@ export default function Contact() {
           Have a product in mind? Let’s talk.
         </h2>
         <p className="mt-6 max-w-[34rem] text-[1.1875rem] leading-relaxed text-ink">
-          I’m open to product design roles, freelance projects and collaborations. Write to me at{' '}
+          I’m open to product design roles, freelance projects and collaborations. Say hello at{' '}
           <a href={links.email} className="link font-semibold text-ink">
             {profile.email}
           </a>

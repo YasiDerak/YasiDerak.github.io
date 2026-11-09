@@ -41,9 +41,9 @@ export const hero = {
 export const about = {
   greeting: 'I’m Yasaman, a UX and product designer in Vancouver.',
   paragraphs: [
-    'I studied architecture, and it still shapes how I design: start with the people who’ll use the space, understand how they move through it, then make every detail earn its place.',
-    'That way of thinking carried into UX and product design. Since 2022 I’ve worked as a UI/UX designer in Vancouver, and today I lead product, design and brand at FaydenAI — a small team building AI-powered products, including Aplomb.',
-    'Day to day that means moving between strategy and detail: shaping product direction, turning research into decisions, designing web and mobile interfaces, building the brand, and working closely with the engineers who bring it to life. I like turning complex ideas into things that are easy to use — and, where I can, add a little joy to the journey.',
+    'I studied architecture, so I still think about how people move through a space. These days the spaces are screens, and the people are usually looking for the right button.',
+    'I’ve worked as a UI/UX designer in Vancouver since 2022. Today I lead product, design and brand at FaydenAI, a small team building AI-powered products, including Aplomb.',
+    'My days swing between big questions and tiny details: what should we build, why, and is that spacing really right? I work closely with the engineers who bring it all to life, and my favourite moment is when something complicated finally feels obvious.',
   ],
   // Three short beliefs about how you work. Edit freely — they should sound like you.
   principles: [
@@ -80,7 +80,7 @@ export const experience = [
     period: 'Jun 2025 – present',
     place: 'Vancouver',
     summary:
-      'I lead product design, user experience and brand across FaydenAI’s AI-powered products — including Aplomb. I set product and UX direction, design the web and mobile experiences, and work closely with engineering to turn ideas into polished, user-focused products.',
+      'I lead product, design and brand for FaydenAI’s AI-powered products, including Aplomb. That means setting the direction, designing the web and mobile experience, and working with engineers until it works well and feels right.',
     focus: [
       'Product direction & UX strategy',
       'Web & mobile UI/UX',
@@ -95,7 +95,7 @@ export const experience = [
     company: 'Freelance',
     period: 'Apr 2022 – May 2025',
     place: 'Vancouver, remote',
-    summary: 'Independent UI/UX design for websites and digital products.',
+    summary: 'Designing websites and digital products for clients, from first sketch to final screens.',
   },
   {
     role: 'Web & UI/UX Designer',
@@ -103,7 +103,7 @@ export const experience = [
     period: 'Dec 2024 – Feb 2025',
     place: 'Vancouver, contract',
     summary:
-      'Designed the responsive website in Figma and built and launched it in Odoo, in English and Persian — including the logos, icons and banners, a clearer navigation, and a smoother assessment form and booking flow.',
+      'Designed a bilingual website (English and Persian) in Figma, then built and launched it in Odoo: logos, icons, banners, clearer navigation, and a booking flow that’s much easier to get through.',
   },
 ]
 
@@ -144,7 +144,7 @@ export const projects = [
     slug: 'aplomb',
     title: 'Aplomb',
     description:
-      'A speaking coach for people who live and work in a language they didn’t grow up speaking. Brand, iOS & Android app and landing page for FaydenAI.',
+      'A speaking coach for people who live and work in a language they didn’t grow up speaking. I designed the brand, the iOS and Android app, and the landing page for FaydenAI.',
     role: 'Product & Design Lead',
     tags: ['Brand', 'Mobile app', 'Website'],
     image: 'aplomb/brand-board.jpg',
@@ -167,28 +167,28 @@ export const expertise = [
   {
     group: 'Product thinking',
     items: [
-      { name: 'Product design', note: 'From problem framing to shipped feature' },
-      { name: 'UX strategy', note: 'Deciding what a product should do, and not do' },
-      { name: 'User research & journeys', note: 'Turning insight into product decisions' },
-      { name: 'AI-powered products', note: 'Making capable systems feel simple' },
+      { name: 'Product design', note: 'From “what if…” to shipped' },
+      { name: 'UX strategy', note: 'Deciding what a product should do, and what it really shouldn’t' },
+      { name: 'User research & journeys', note: 'Listening first, then designing' },
+      { name: 'AI-powered products', note: 'Making clever technology feel simple' },
     ],
   },
   {
     group: 'Interface & craft',
     items: [
-      { name: 'UI design for mobile & web', note: 'iOS, Android and responsive web' },
-      { name: 'Wireframing & prototyping', note: 'Testing ideas before committing to them' },
-      { name: 'Brand & visual identity', note: 'Marks, type and colour that hold together' },
-      { name: 'Bilingual interfaces', note: 'English and Persian, left-to-right and right-to-left' },
+      { name: 'UI design for mobile & web', note: 'iOS, Android and the web, all looking like family' },
+      { name: 'Wireframing & prototyping', note: 'Trying ideas while they’re still cheap to change' },
+      { name: 'Brand & visual identity', note: 'Logos, type and colour that get along' },
+      { name: 'Bilingual interfaces', note: 'English and Persian, left to right and right to left' },
     ],
   },
   {
     group: 'Systems & teams',
     items: [
-      { name: 'Design systems', note: 'Tokens, components and consistency' },
+      { name: 'Design systems', note: 'So the tenth screen still matches the first' },
       { name: 'Website design & build', note: 'Landing pages that tell a product’s story' },
-      { name: 'Design leadership', note: 'Setting direction across product, design and brand' },
-      { name: 'Cross-functional collaboration', note: 'Working closely with engineering and product' },
+      { name: 'Design leadership', note: 'Keeping product, design and brand heading the same way' },
+      { name: 'Cross-functional collaboration', note: 'Good friends with engineers (it helps a lot)' },
     ],
   },
 ]
