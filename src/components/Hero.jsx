@@ -100,7 +100,7 @@ export default function Hero() {
             {hero.title}
           </p>
 
-          <p className="hero-in mt-5 max-w-[32rem] text-[1.125rem] leading-relaxed text-ink-2" style={{ '--d': '220ms' }}>
+          <p className="hero-in mt-5 max-w-[30rem] text-[1.125rem] leading-relaxed text-ink-2 [text-wrap:pretty]" style={{ '--d': '220ms' }}>
             {hero.intro}
           </p>
 

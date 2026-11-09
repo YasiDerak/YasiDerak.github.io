@@ -33,7 +33,7 @@ export const nav = [
 export const hero = {
   title: 'Product & UI/UX Designer in Vancouver',
   intro:
-    'I lead product, design and brand at FaydenAI, and design products that make sense and feel good to use: from the question a product answers to the interface people actually touch.',
+    'I make complicated things feel simple, which is harder than it looks. Right now I lead product and design at FaydenAI in Vancouver.',
   // Your photo, shown in the arch on the first screen.
   portrait: 'about/portrait.jpg',
 }
