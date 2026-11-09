@@ -57,10 +57,10 @@ export default function Contact() {
           </a>
           <CopyEmail />
         </div>
-        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-3 border-t border-line-strong pt-8">
+        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-1 border-t border-line-strong pt-6">
           {elsewhere.map((s) => (
             <li key={s.label}>
-              <a href={s.href} target="_blank" rel="noreferrer" className="link font-medium text-ink">
+              <a href={s.href} target="_blank" rel="noreferrer" className="link inline-block py-2.5 font-medium text-ink">
                 {s.label}
               </a>
             </li>

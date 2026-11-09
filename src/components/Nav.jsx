@@ -14,6 +14,13 @@ export default function Nav({ home = true }) {
   // At the top of the home page the bar sits on the light violet hero.
   const clear = home && !scrolled
 
+  // Close the phone menu whenever the page or section changes (links, Back button).
+  useEffect(() => {
+    const close = () => setOpen(false)
+    window.addEventListener('hashchange', close)
+    return () => window.removeEventListener('hashchange', close)
+  }, [])
+
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     const onKey = (e) => e.key === 'Escape' && setOpen(false)

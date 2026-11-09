@@ -100,7 +100,7 @@ export default function Work() {
           <h2 id="work-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">
             Selected work
           </h2>
-          <a href={links.behance} target="_blank" rel="noreferrer" className="link font-semibold text-violet-deep">
+          <a href={links.behance} target="_blank" rel="noreferrer" className="link inline-block py-2.5 font-semibold text-violet-deep">
             More on Behance
           </a>
         </div>
