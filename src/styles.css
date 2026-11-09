@@ -177,6 +177,11 @@
 .morph-strong {
   background: linear-gradient(135deg, #8e6cf2 0%, #b896f5 45%, #a9bdff 100%);
 }
+/* The photo frame uses the same gradient, turned the other way round,
+   so it matches the shape but still reads where the two overlap. */
+.morph-frame {
+  background: linear-gradient(315deg, #8e6cf2 0%, #b896f5 45%, #a9bdff 100%);
+}
 .morph-soft {
   background: linear-gradient(135deg, #e2d7fb 0%, #c9b8f6 100%);
 }

@@ -53,10 +53,10 @@ function ArchPortrait({ src }) {
         <div className="morph morph-strong h-full w-full opacity-90" />
       </div>
       <div
-        className="relative border-[6px] border-white bg-lilac-200 shadow-[var(--shadow-lift)] transition-transform duration-500 ease-out"
+        className="morph-frame relative p-[7px] shadow-[var(--shadow-lift)] transition-transform duration-500 ease-out"
         style={{ borderRadius: ARCH, transform: 'translate3d(calc(var(--mx) * 14px), calc(var(--my) * 12px), 0)' }}
       >
-        <div className="aspect-[4/5] overflow-hidden" style={{ borderRadius: ARCH }}>
+        <div className="aspect-[4/5] overflow-hidden bg-lilac-200" style={{ borderRadius: ARCH }}>
           {src && <img src={src} alt={`Portrait of ${profile.name}`} decoding="async" className="h-full w-full object-cover" />}
         </div>
       </div>
