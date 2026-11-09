@@ -43,18 +43,26 @@ function ArchPortrait({ src }) {
   }, [reduced])
 
   return (
-    <figure ref={ref} className="relative mx-auto w-full max-w-[17rem] sm:max-w-[20rem]" style={{ '--mx': 0, '--my': 0 }}>
-      {/* the same shape, a little larger and offset, behind the photo */}
+    <figure ref={ref} className="hero-pop relative mx-auto w-full max-w-[17rem] sm:max-w-[20rem]" style={{ '--mx': 0, '--my': 0 }}>
+      {/* a thin outline in the same shape, offset up-left */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 transition-transform duration-1000 ease-out"
+        style={{ transform: 'translate3d(calc(-8% + var(--mx) * 18px), calc(-6% + var(--my) * 14px), 0) scale(1.06)' }}
+      >
+        <div className="blob-sync h-full w-full border-[1.5px] border-violet/70" />
+      </div>
+      {/* the same shape, filled, a little larger and offset down-right */}
       <div
         aria-hidden="true"
         className="absolute inset-0 transition-transform duration-700 ease-out"
         style={{ transform: 'translate3d(calc(9% + var(--mx) * -22px), calc(8% + var(--my) * -16px), 0) scale(1.1)' }}
       >
-        <div className="blob-sync morph-strong h-full w-full opacity-90" />
+        <div className="blob-sync morph-strong morph-shift h-full w-full opacity-90" />
       </div>
       {/* the photo, framed in the matching gradient, in the same shape */}
       <div
-        className="blob-sync morph-frame relative p-[7px] shadow-[var(--shadow-lift)] transition-transform duration-500 ease-out"
+        className="blob-sync morph-frame morph-shift relative p-[7px] shadow-[0_30px_60px_-24px_rgb(107_79_207/0.55)] transition-transform duration-500 ease-out"
         style={{ transform: 'translate3d(calc(var(--mx) * 12px), calc(var(--my) * 10px), 0)' }}
       >
         <div className="blob-sync aspect-[4/5] overflow-hidden bg-lilac-200">
@@ -70,7 +78,7 @@ export default function Hero() {
     <section id="top" className="relative isolate overflow-hidden bg-lilac-100">
       <div
         aria-hidden="true"
-        className="morph morph-soft pointer-events-none absolute -bottom-36 -left-36 -z-10 h-64 w-72 opacity-70 md:h-80 md:w-96"
+        className="morph morph-soft pointer-events-none absolute -bottom-52 -left-48 -z-10 h-64 w-72 opacity-60 md:h-80 md:w-96"
         style={{ animationDuration: '14s', animationDirection: 'reverse' }}
       />
       <div className="container-page grid items-center gap-16 pb-20 pt-32 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-40">
