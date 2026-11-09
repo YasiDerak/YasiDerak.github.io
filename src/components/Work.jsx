@@ -11,7 +11,7 @@ function Plate({ p, videoRef }) {
   // the still image shows until the video is actually playing, so there is never a blank frame
   const [showVideo, setShowVideo] = useState(false)
   return (
-    <div className="relative aspect-[5/4] overflow-hidden rounded-2xl p-5 sm:p-8" style={{ background: p.plate || 'var(--color-lilac-50)' }}>
+    <div className="relative aspect-[5/4] overflow-hidden rounded-2xl p-5 sm:p-8 md:aspect-auto md:h-[clamp(22rem,34vw,30rem)]" style={{ background: p.plate || 'var(--color-lilac-50)' }}>
       {src ? (
         <div className="relative h-full w-full overflow-hidden rounded-lg">
           <img
@@ -110,7 +110,7 @@ function Project({ p, i }) {
 
 export default function Work() {
   return (
-    <section id="work" aria-labelledby="work-title" className="scroll-mt-16 py-20 md:py-28">
+    <section id="work" aria-labelledby="work-title" className="scroll-mt-16 pb-16 pt-20 md:pb-20 md:pt-24">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 id="work-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">

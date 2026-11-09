@@ -273,7 +273,7 @@ export function Final() {
             href={siteUrl}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-[0.95rem] font-medium text-paper transition-all duration-300 hover:-translate-y-0.5 hover:bg-violet-deep"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-violet px-6 py-3.5 text-[0.95rem] font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-violet-deep hover:text-white"
           >
             See Aplomb live
             <Arrow className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

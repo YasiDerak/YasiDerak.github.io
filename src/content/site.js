@@ -33,16 +33,16 @@ export const nav = [
 export const hero = {
   title: 'Product & UI/UX Designer in Vancouver',
   intro:
-    'I make complicated things feel simple, which is harder than it looks. Right now I lead product and design at FaydenAI in Vancouver.',
+    'I make complicated things feel simple, which is harder than it looks. Right now I lead product and design at FaydenAI.',
   // Your photo, shown in the arch on the first screen.
   portrait: 'about/portrait.jpg',
 }
 
 export const about = {
-  greeting: 'I’m Yasaman, a UX and product designer in Vancouver.',
+  greeting: 'I’m Yasaman, a UX and product designer.',
   paragraphs: [
     'I studied architecture, so I still think about how people move through a space. These days the spaces are screens, and the people are usually looking for the right button.',
-    'I’ve worked as a UI/UX designer in Vancouver since 2022. Today I lead product, design and brand at FaydenAI, a small team building AI-powered products, including Aplomb.',
+    'I’ve worked as a UI/UX designer since 2022. Today I lead product, design and brand at FaydenAI, a small team building AI-powered products, including Aplomb.',
     'My days swing between big questions and tiny details: what should we build, why, and is that spacing really right? I work closely with the engineers who bring it all to life, and my favourite moment is when something complicated finally feels obvious.',
   ],
   // Three short beliefs about how you work. Edit freely — they should sound like you.
@@ -78,7 +78,7 @@ export const experience = [
     role: 'Product & Design Lead',
     company: 'FaydenAI',
     period: 'Jun 2025 – present',
-    place: 'Vancouver',
+    place: '',
     summary:
       'I lead product, design and brand for FaydenAI’s AI-powered products, including Aplomb. That means setting the direction, designing the web and mobile experience, and working with engineers until it works well and feels right.',
     focus: [
@@ -94,14 +94,14 @@ export const experience = [
     role: 'UI/UX Designer',
     company: 'Freelance',
     period: 'Apr 2022 – May 2025',
-    place: 'Vancouver, remote',
+    place: 'Remote',
     summary: 'Designing websites and digital products for clients, from first sketch to final screens.',
   },
   {
     role: 'Web & UI/UX Designer',
     company: 'Immibright',
     period: 'Dec 2024 – Feb 2025',
-    place: 'Vancouver, contract',
+    place: 'Contract',
     summary:
       'Designed a bilingual website (English and Persian) in Figma, then built and launched it in Odoo: logos, icons, banners, clearer navigation, and a booking flow that’s much easier to get through.',
   },
@@ -126,7 +126,7 @@ export const education = [
   {
     title: 'Designing Microinteractions with Figma',
     school: 'LinkedIn',
-    period: '',
+    period: 'Aug 2024',
   },
 ]
 

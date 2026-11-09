@@ -32,7 +32,7 @@ const elsewhere = [
 export default function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-title" className="band-end relative isolate scroll-mt-16 overflow-hidden text-ink">
-      <div className="container-page pb-4 pt-20 md:pt-28">
+      <div className="container-page pb-4 pt-20 md:pt-24">
         {/* title in the left half; the invitation and buttons beside it in the right half,
             lined up with the Experience column in About */}
         <div className="grid gap-6 md:grid-cols-2 md:items-center md:gap-0">

@@ -136,7 +136,7 @@
     .band,
     .band-end,
     .band-bleed {
-      --fade: 7rem;
+      --fade: 6rem;
     }
   }
   .band,

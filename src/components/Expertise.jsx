@@ -2,7 +2,7 @@ import { expertise, tools } from '../content/site'
 
 export default function Expertise() {
   return (
-    <section id="skills" aria-labelledby="skills-title" className="scroll-mt-16 py-20 md:py-28">
+    <section id="skills" aria-labelledby="skills-title" className="scroll-mt-16 py-16 md:py-20">
       <div className="container-page">
         <h2 id="skills-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">
           What I do

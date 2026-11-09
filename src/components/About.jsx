@@ -30,7 +30,7 @@ function Timeline({ items }) {
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="band scroll-mt-16 py-20 md:py-28">
+    <section id="about" aria-labelledby="about-title" className="band scroll-mt-16 py-20 md:py-24">
       <div className="container-page grid gap-16 md:grid-cols-2 md:gap-x-0 md:gap-y-0">
         {/* left half: the intro, then the logo centred in the space that is left */}
         <div className="flex flex-col md:pr-10">
