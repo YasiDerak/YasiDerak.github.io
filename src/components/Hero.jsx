@@ -4,7 +4,7 @@ import { img } from '../lib/images'
 import { usePrefersReducedMotion } from '../lib/hooks'
 
 /**
- * The photo (no frame) and the violet shape behind it share one soft, flowing outline
+ * The photo (no frame), a thin outline and the violet shape behind it share one soft, flowing outline
  * that changes in sync, so the frame and the shape complete each other.
  * On a mouse, the photo drifts a few pixels toward the cursor and the shape
  * drifts the other way, for a sense of depth.
@@ -44,6 +44,14 @@ function ArchPortrait({ src }) {
 
   return (
     <figure ref={ref} className="hero-pop relative mx-auto w-full max-w-[17rem] sm:max-w-[20rem]" style={{ '--mx': 0, '--my': 0 }}>
+      {/* a thin outline in the same shape, offset up-left */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 transition-transform duration-1000 ease-out"
+        style={{ transform: 'translate3d(calc(-8% + var(--mx) * 18px), calc(-6% + var(--my) * 14px), 0) scale(1.06)' }}
+      >
+        <div className="blob-sync h-full w-full border-[1.5px] border-violet/70" />
+      </div>
       {/* the same shape, filled, a little larger and offset down-right */}
       <div
         aria-hidden="true"
