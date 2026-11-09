@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { links, projects } from '../content/site'
 import { img, publicUrl } from '../lib/images'
 import { usePrefersReducedMotion } from '../lib/hooks'
@@ -8,6 +8,8 @@ import { PlaceholderTag } from './ui/Bits'
 /** Each project sits on its own colour plate, taken from its brand. */
 function Plate({ p, videoRef }) {
   const src = img(p.image)
+  // the still image shows until the video is actually playing, so there is never a blank frame
+  const [showVideo, setShowVideo] = useState(false)
   return (
     <div className="relative aspect-[5/4] overflow-hidden rounded-2xl p-5 sm:p-8" style={{ background: p.plate || 'var(--color-lilac-50)' }}>
       {src ? (
@@ -25,9 +27,10 @@ function Plate({ p, videoRef }) {
               muted
               loop
               playsInline
-              preload="none"
+              preload="metadata"
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              onPlaying={() => setShowVideo(true)}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${showVideo ? 'opacity-100' : 'opacity-0'}`}
             />
           )}
         </div>
@@ -59,14 +62,27 @@ function Project({ p, i }) {
       ? { href, onClick: () => window.history.replaceState(null, '', '#work') }
       : { href, target: '_blank', rel: 'noreferrer' }
 
-  const play = () => !reduced && videoRef.current?.play().catch(() => {})
-  const stop = () => videoRef.current?.pause()
+  // The video plays on its own while the card is on screen, and pauses once it is scrolled away.
+  // With reduced motion turned on, the still image stays instead.
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video || reduced || !('IntersectionObserver' in window)) return
+    const io = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? video.play().catch(() => {}) : video.pause()),
+      { threshold: 0.35 },
+    )
+    io.observe(video)
+    return () => {
+      io.disconnect()
+      video.pause()
+    }
+  }, [reduced])
 
   // Alternate wide / narrow so the grid doesn't read as a row of identical cards.
   const wide = i % 4 === 0 || i % 4 === 3
   return (
     <li className={wide ? 'md:col-span-7' : 'md:col-span-5'}>
-      <Tag {...tagProps} onMouseEnter={play} onMouseLeave={stop} onFocus={play} onBlur={stop} className="group block rounded-2xl">
+      <Tag {...tagProps} className="group block rounded-2xl">
         <Plate p={p} videoRef={videoRef} />
         <div className="mt-6 max-w-[36rem]">
           <h3 className="flex flex-wrap items-center gap-3 font-display text-[1.75rem] font-semibold leading-tight">
