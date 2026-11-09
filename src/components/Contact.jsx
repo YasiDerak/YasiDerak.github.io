@@ -32,27 +32,33 @@ const elsewhere = [
 export default function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-title" className="band-end relative isolate scroll-mt-16 overflow-hidden text-ink">
-      <div className="container-page py-20 md:py-28">
-        <h2 id="contact-title" className="display max-w-[16ch] text-[clamp(2.5rem,5.4vw,4.25rem)]">
-          Have a product in mind? Let’s talk.
-        </h2>
-        <p className="mt-6 max-w-[34rem] text-[1.1875rem] leading-relaxed text-ink">
-          I’m open to product design roles, freelance projects and collaborations. Say hello at{' '}
-          <a href={links.email} className="link font-semibold text-ink">
-            {profile.email}
-          </a>
-          .
-        </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <a
-            href={links.email}
-            className="rounded-full bg-violet px-7 py-3.5 font-medium text-ink transition-colors hover:bg-violet-deep hover:text-white"
-          >
-            Email me
-          </a>
-          <CopyEmail />
+      <div className="container-page pb-4 pt-20 md:pt-28">
+        {/* title in the left half; the invitation and buttons beside it in the right half,
+            lined up with the Experience column in About */}
+        <div className="grid gap-6 md:grid-cols-2 md:items-center md:gap-0">
+          <h2 id="contact-title" className="display max-w-[16ch] text-[clamp(2.5rem,5.4vw,4.25rem)] md:pr-10">
+            Have a product in mind? Let’s talk.
+          </h2>
+          <div className="w-full md:mx-auto md:max-w-[29rem] md:pl-6 lg:pl-0">
+            <p className="text-[1.1875rem] leading-relaxed text-ink">
+              I’m open to product design roles, freelance projects and collaborations. Say hello at{' '}
+              <a href={links.email} className="link font-semibold text-ink">
+                {profile.email}
+              </a>
+              .
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={links.email}
+                className="rounded-full bg-violet px-7 py-3.5 font-medium text-ink transition-colors hover:bg-violet-deep hover:text-white"
+              >
+                Email me
+              </a>
+              <CopyEmail />
+            </div>
+          </div>
         </div>
-        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-1 border-t border-line-strong pt-6">
+        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-1 border-t border-line-strong pt-4 md:mt-20">
           {elsewhere.map((s) => (
             <li key={s.label}>
               <a href={s.href} target="_blank" rel="noreferrer" className="link inline-block py-2.5 font-medium text-ink">
