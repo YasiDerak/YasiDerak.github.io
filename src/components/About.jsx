@@ -31,8 +31,9 @@ function Timeline({ items }) {
 export default function About() {
   return (
     <section id="about" aria-labelledby="about-title" className="band scroll-mt-16 py-20 md:py-28">
-      <div className="container-page grid gap-16 md:grid-cols-12 md:gap-10">
-        <div className="md:col-span-6">
+      <div className="container-page grid gap-16 md:grid-cols-2 md:gap-x-0 md:gap-y-0">
+        {/* left half: the intro, then the logo centred in the space that is left */}
+        <div className="flex flex-col md:pr-10">
           <h2 id="about-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">
             About
           </h2>
@@ -52,13 +53,15 @@ export default function About() {
               ))}
             </dl>
           )}
-          {/* the YD logo on its shape fills the quiet space under the intro, and stays in view while the timeline scrolls */}
-          <div className="mt-16 md:sticky md:top-32 md:mt-20">
+          {/* the YD logo on its shape, centred in the space under the intro:
+              the same distance above and below, left and right */}
+          <div className="flex flex-1 items-center justify-center pt-16 md:-mr-10 md:py-16">
             <BrandMark className="h-56 w-72 sm:h-64 sm:w-80 lg:h-72 lg:w-[22rem]" />
           </div>
         </div>
 
-        <div id="experience" className="scroll-mt-24 md:col-span-5 md:col-start-8">
+        {/* right half: experience and education, centred in the half */}
+        <div id="experience" className="w-full scroll-mt-24 md:mx-auto md:max-w-[29rem] md:pl-6 lg:pl-0">
           <h3 className="font-display text-[1.75rem] font-semibold">Experience</h3>
           <Timeline items={experience} />
 
