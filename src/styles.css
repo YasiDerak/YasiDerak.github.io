@@ -177,6 +177,18 @@
 .morph-strong {
   background: linear-gradient(135deg, #8e6cf2 0%, #b896f5 45%, #a9bdff 100%);
 }
+/* Hero photo and the shape behind it share one flowing outline that
+   changes in sync (shape only, no rotation, so the photo stays upright). */
+@keyframes blob {
+  0%, 100% { border-radius: 46% 54% 58% 42% / 44% 46% 54% 56%; }
+  33% { border-radius: 58% 42% 46% 54% / 54% 58% 42% 46%; }
+  66% { border-radius: 42% 58% 54% 46% / 48% 42% 58% 52%; }
+}
+.blob-sync {
+  border-radius: 46% 54% 58% 42% / 44% 46% 54% 56%;
+  animation: blob 10s ease-in-out infinite;
+}
+
 /* The photo frame uses the same gradient, turned the other way round,
    so it matches the shape but still reads where the two overlap. */
 .morph-frame {
@@ -205,6 +217,7 @@
   }
   .hero-in,
   .morph,
+  .blob-sync,
   .anim-pulse-dot,
   .anim-bar {
     animation: none;

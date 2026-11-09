@@ -3,12 +3,11 @@ import { hero, profile } from '../content/site'
 import { img } from '../lib/images'
 import { usePrefersReducedMotion } from '../lib/hooks'
 
-const ARCH = '50% 50% 1.25rem 1.25rem / 40% 40% 1.25rem 1.25rem'
-
 /**
- * The photo in a white-framed arch, sitting on a violet gradient shape that
- * slowly changes form. On a mouse, the photo drifts a few pixels toward the
- * cursor and the shape drifts the other way, for a sense of depth.
+ * The photo and the violet shape behind it share one soft, flowing outline
+ * that changes in sync, so the frame and the shape complete each other.
+ * On a mouse, the photo drifts a few pixels toward the cursor and the shape
+ * drifts the other way, for a sense of depth.
  */
 function ArchPortrait({ src }) {
   const ref = useRef(null)
@@ -45,19 +44,21 @@ function ArchPortrait({ src }) {
 
   return (
     <figure ref={ref} className="relative mx-auto w-full max-w-[17rem] sm:max-w-[20rem]" style={{ '--mx': 0, '--my': 0 }}>
+      {/* the same shape, a little larger and offset, behind the photo */}
       <div
         aria-hidden="true"
-        className="absolute -inset-x-[22%] -inset-y-[14%] transition-transform duration-700 ease-out"
-        style={{ transform: 'translate3d(calc(var(--mx) * -24px), calc(var(--my) * -18px), 0)' }}
+        className="absolute inset-0 transition-transform duration-700 ease-out"
+        style={{ transform: 'translate3d(calc(9% + var(--mx) * -22px), calc(8% + var(--my) * -16px), 0) scale(1.1)' }}
       >
-        <div className="morph morph-strong h-full w-full opacity-90" />
+        <div className="blob-sync morph-strong h-full w-full opacity-90" />
       </div>
+      {/* the photo, framed in the matching gradient, in the same shape */}
       <div
-        className="morph-frame relative p-[7px] shadow-[var(--shadow-lift)] transition-transform duration-500 ease-out"
-        style={{ borderRadius: ARCH, transform: 'translate3d(calc(var(--mx) * 14px), calc(var(--my) * 12px), 0)' }}
+        className="blob-sync morph-frame relative p-[7px] shadow-[var(--shadow-lift)] transition-transform duration-500 ease-out"
+        style={{ transform: 'translate3d(calc(var(--mx) * 12px), calc(var(--my) * 10px), 0)' }}
       >
-        <div className="aspect-[4/5] overflow-hidden bg-lilac-200" style={{ borderRadius: ARCH }}>
-          {src && <img src={src} alt={`Portrait of ${profile.name}`} decoding="async" className="h-full w-full object-cover" />}
+        <div className="blob-sync aspect-[4/5] overflow-hidden bg-lilac-200">
+          {src && <img src={src} alt={`Portrait of ${profile.name}`} decoding="async" className="h-full w-full object-cover object-[50%_30%]" />}
         </div>
       </div>
     </figure>
