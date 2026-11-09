@@ -35,7 +35,7 @@ export default function Contact() {
     <section id="contact" aria-labelledby="contact-title" className="band-end relative isolate scroll-mt-16 overflow-hidden text-ink">
       <div
         aria-hidden="true"
-        className="morph morph-strong pointer-events-none absolute -right-20 -top-16 -z-10 h-72 w-80 opacity-60 md:-right-10 md:top-10 md:h-96 md:w-[28rem]"
+        className="morph morph-strong pointer-events-none absolute -right-10 top-10 -z-10 hidden h-96 w-[28rem] opacity-60 lg:block"
         style={{ animationDuration: '13s' }}
       />
       {/* fade the top edge (and the shape) in from the white section above */}
@@ -70,7 +70,12 @@ export default function Contact() {
           </a>
           <CopyEmail />
         </div>
-        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-1 border-t border-line-strong pt-6">
+        {/* phones and tablets: the same shape and logo, below the buttons so they never cover the text */}
+        <div aria-hidden="true" className="relative mt-14 flex h-56 w-72 max-w-full items-center justify-center sm:ml-auto lg:hidden">
+          <div className="morph morph-strong absolute inset-0 opacity-60" style={{ animationDuration: '13s' }} />
+          <img src={logo} alt="" width="478" height="360" loading="lazy" className="relative w-40" />
+        </div>
+        <ul className="mt-10 flex flex-wrap lg:mt-14 gap-x-8 gap-y-1 border-t border-line-strong pt-6">
           {elsewhere.map((s) => (
             <li key={s.label}>
               <a href={s.href} target="_blank" rel="noreferrer" className="link inline-block py-2.5 font-medium text-ink">
