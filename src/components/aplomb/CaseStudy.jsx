@@ -7,19 +7,14 @@ import { Decisions, Final, Overview, Role, System } from './Chapters'
 /** The Aplomb case study page (#/work/aplomb). The film leads; the sections fill in what it can't show. */
 export default function AplombPage() {
   return (
-    <article aria-labelledby="aplomb-title" className="relative px-2 pt-24 md:px-4 md:pt-28">
-      <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#EEF2FC] via-[#F4F3FC] to-paper md:rounded-[2.75rem]">
-        {/* soft atmosphere */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-40 top-0 h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,#DCE6FD,transparent_70%)] opacity-90"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-32 top-40 h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,#E5DEFB,transparent_70%)]"
-        />
-
-        <div className="container-page relative pb-6 pt-10 md:pt-14">
+    <article aria-labelledby="aplomb-title" className="relative isolate overflow-x-clip">
+      {/* the same light violet as the home page hero, fading to white behind the film */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[44rem] bg-[linear-gradient(to_bottom,var(--color-lilac-100)_0%,var(--color-lilac-100)_55%,#ffffff_100%)] md:h-[52rem]"
+      />
+      <div>
+        <div className="container-page relative pb-6 pt-28 md:pt-36">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-ink-3">
             <a href="#work" className="group inline-flex items-center gap-2 hover:text-violet-deep">
               <Arrow direction="right" className="rotate-180 transition-transform duration-300 group-hover:-translate-x-0.5" />

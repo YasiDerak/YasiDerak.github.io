@@ -31,11 +31,16 @@ const elsewhere = [
 
 export default function Contact() {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="relative isolate scroll-mt-16 overflow-hidden bg-lilac-200 text-ink">
+    <section id="contact" aria-labelledby="contact-title" className="band-end relative isolate scroll-mt-16 overflow-hidden text-ink">
       <div
         aria-hidden="true"
         className="morph morph-strong pointer-events-none absolute -right-20 -top-16 -z-10 h-72 w-80 opacity-60 md:-right-10 md:top-10 md:h-96 md:w-[28rem]"
         style={{ animationDuration: '13s' }}
+      />
+      {/* fade the top edge (and the shape) in from the white section above */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-[5] h-40 bg-[linear-gradient(to_bottom,#ffffff_20%,transparent)] md:h-56"
       />
       <div className="container-page py-20 md:py-28">
         <h2 id="contact-title" className="display max-w-[16ch] text-[clamp(2.5rem,5.4vw,4.25rem)]">

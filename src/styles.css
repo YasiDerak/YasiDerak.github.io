@@ -121,6 +121,52 @@
     text-decoration-thickness: 2px;
   }
 
+  /* Page rhythm: sections are either white or a light violet band.
+     A band never meets white with a hard edge; it fades in and out.
+     .band       fades in at the top and out at the bottom
+     .band-end   fades in at the top and stays violet (contact + footer)
+     .band-bleed the same as .band, full width, for a section inside a container */
+  .band,
+  .band-end,
+  .band-bleed {
+    --band: var(--color-lilac-100);
+    --fade: 5rem;
+  }
+  @media (min-width: 768px) {
+    .band,
+    .band-end,
+    .band-bleed {
+      --fade: 7rem;
+    }
+  }
+  .band,
+  .band-bleed::before {
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0,
+      var(--band) var(--fade),
+      var(--band) calc(100% - var(--fade)),
+      #ffffff 100%
+    );
+  }
+  .band-end {
+    --band: var(--color-lilac-200);
+    background: linear-gradient(to bottom, #ffffff 0, var(--band) var(--fade), var(--band) 100%);
+  }
+  .band-bleed {
+    position: relative;
+    isolation: isolate;
+  }
+  .band-bleed::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    z-index: -1;
+  }
+
   /* Kept for the Aplomb page */
   .link-draw {
     background-image: linear-gradient(currentColor, currentColor);

@@ -8,7 +8,7 @@ function Timeline({ items }) {
           <span
             aria-hidden="true"
             className={`absolute -left-[5px] top-[0.45rem] h-[9px] w-[9px] rounded-full ${
-              job.current ? 'bg-violet-deep ring-4 ring-pink' : 'border border-line-strong bg-lilac-50'
+              job.current ? 'bg-violet-deep ring-4 ring-pink' : 'border border-line-strong bg-white'
             }`}
           />
           <p className="text-[0.875rem] tabular-nums text-ink-3">
@@ -29,7 +29,7 @@ function Timeline({ items }) {
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="scroll-mt-16 bg-lilac-50 py-20 md:py-28">
+    <section id="about" aria-labelledby="about-title" className="band scroll-mt-16 py-20 md:py-28">
       <div className="container-page grid gap-16 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-6">
           <h2 id="about-title" className="display text-[clamp(2.25rem,4.5vw,3rem)]">

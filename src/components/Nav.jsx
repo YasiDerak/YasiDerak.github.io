@@ -11,8 +11,8 @@ export default function Nav({ home = true }) {
   // On a project page, "Work" is where you are.
   const active = home ? section : 'work'
   const [open, setOpen] = useState(false)
-  // At the top of the home page the bar sits on the light violet hero.
-  const clear = home && !scrolled
+  // At the top of every page the bar sits on the light violet band.
+  const clear = !scrolled
 
   // Close the phone menu whenever the page or section changes (links, Back button).
   useEffect(() => {

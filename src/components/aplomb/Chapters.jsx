@@ -12,10 +12,10 @@ export const chapters = [
   { id: 'aplomb-final', n: '05', label: 'Final product' },
 ]
 
-function Chapter({ index, title, intro, children, className = '' }) {
+function Chapter({ index, title, intro, children, band = false, className = '' }) {
   const c = chapters[index]
   return (
-    <section id={c.id} aria-labelledby={`${c.id}-title`} className={`scroll-mt-24 py-14 md:py-20 ${className}`}>
+    <section id={c.id} aria-labelledby={`${c.id}-title`} className={`scroll-mt-24 ${band ? 'band-bleed my-4 py-20 md:py-28' : 'py-14 md:py-20'} ${className}`}>
       <Reveal className="mb-10 grid gap-5 md:mb-12 md:grid-cols-12 md:gap-10">
         <p className="flex items-baseline gap-3 md:col-span-3">
           <span className="font-display text-[2.2rem] leading-none text-violet-deep">{c.n}</span>
@@ -105,7 +105,7 @@ export function Role() {
 /* 03 ---------------------------------------------------------------- */
 export function Decisions() {
   return (
-    <Chapter index={2} title="Small choices that make a big difference.">
+    <Chapter index={2} band title="Small choices that make a big difference.">
       <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 md:pl-[25%]">
         {aplomb.decisions.map((d, i) => (
           <Reveal key={d.title} delay={(i % 2) * 90} className="border-t border-line-strong pt-5">
