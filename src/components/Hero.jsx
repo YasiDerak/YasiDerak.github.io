@@ -75,10 +75,18 @@ function ArchPortrait({ src }) {
 
 export default function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden bg-lilac-100">
+    <section
+      id="top"
+      className="relative isolate overflow-hidden bg-[linear-gradient(to_bottom,var(--color-lilac-100)_0%,var(--color-lilac-100)_62%,#ffffff_100%)]"
+    >
+      {/* soft fade into the next section, over the corner shape but under the content */}
       <div
         aria-hidden="true"
-        className="morph morph-soft pointer-events-none absolute -bottom-52 -left-48 -z-10 h-64 w-72 opacity-60 md:h-80 md:w-96"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-[5] h-56 bg-[linear-gradient(to_bottom,transparent,#ffffff_78%)] md:h-72"
+      />
+      <div
+        aria-hidden="true"
+        className="morph morph-soft pointer-events-none absolute -bottom-52 -left-48 -z-10 hidden h-64 w-72 opacity-60 md:block md:h-80 md:w-96"
         style={{ animationDuration: '14s', animationDirection: 'reverse' }}
       />
       <div className="container-page grid items-center gap-16 pb-20 pt-32 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-40">
